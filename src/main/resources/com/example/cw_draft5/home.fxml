@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ap" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" stylesheets="@CSS/Home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <ImageView fitHeight="220.0" fitWidth="313.0" layoutX="495.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/CalenderOption.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="198.0" fitWidth="215.0" layoutX="76.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/club.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="206.0" fitWidth="185.0" layoutX="76.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/AttendanceOption.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="178.0" fitWidth="186.0" layoutX="525.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/ReportOption.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="139.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Club List" wrappingWidth="123.47002410888672">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="557.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Calendar" wrappingWidth="123.47002410888672">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="128.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Event Attendance" wrappingWidth="178.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="568.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Report" wrappingWidth="123.47002410888672">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
