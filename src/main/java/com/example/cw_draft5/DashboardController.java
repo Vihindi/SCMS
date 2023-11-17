@@ -127,7 +127,11 @@ public class DashboardController implements Initializable {
 
     @FXML
     void clubAdmin(MouseEvent event) {
-
+        try {
+            loadPage("Clubcreation");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void loadPage(String page) throws IOException {
