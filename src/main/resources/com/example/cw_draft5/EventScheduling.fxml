@@ -21,7 +21,7 @@
                 <Image url="@Asserts/HomeBackground.jpg" />
             </image>
         </ImageView>
-        <Text layoutX="297.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEW EVENT" wrappingWidth="214.90087890625">
+        <Text layoutX="321.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEW EVENT" wrappingWidth="214.90087890625">
             <font>
                 <Font name="Berlin Sans FB" size="40.0" />
             </font>
@@ -45,10 +45,6 @@
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
-        <Button fx:id="viewCalendar" layoutX="627.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#viewCalendar" opacity="0.84" prefHeight="44.0" prefWidth="132.0" text="View Calendar">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font></Button>
         <Text layoutX="56.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Description">
             <font>
                 <Font name="System Bold" size="16.0" />
@@ -68,7 +64,7 @@
             </font>
         </Text>
         <TextArea layoutX="220.0" layoutY="303.0" prefHeight="84.0" prefWidth="244.0" promptText="Online meeting links and URL's can also be included" />
-        <Button fx:id="submit" layoutX="342.0" layoutY="424.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" text="Submit">
+        <Button fx:id="submit" layoutX="367.0" layoutY="439.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" text="Submit">
             <font>
                 <Font name="Arial Bold" size="17.0" />
             </font>
