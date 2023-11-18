@@ -113,6 +113,7 @@ public class DashboardController implements Initializable {
 
     }
 
+
     @FXML
     void AttendanceAdmin(MouseEvent event) {
         try {
@@ -162,6 +163,12 @@ public class DashboardController implements Initializable {
 
     @FXML
     void CalendarClick(MouseEvent event) {
+        try {
+            loadPage("Calendar");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
@@ -182,6 +189,12 @@ public class DashboardController implements Initializable {
 
     @FXML
     void clubListClick(MouseEvent event) {
+        try {
+            loadPage("View clubs");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 

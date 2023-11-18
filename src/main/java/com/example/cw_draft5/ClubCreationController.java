@@ -19,9 +19,7 @@ public class ClubCreationController {
 
     @FXML
     void CreateClub(MouseEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("View clubs.fxml")));
-        stage.setScene(new Scene(root, 789, 531));
+
     }
 
 }

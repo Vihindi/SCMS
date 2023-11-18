@@ -11,10 +11,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" styleClass="root" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.EventAttendanceController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/AttendanceTrack.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.EventAttendanceController">
 
     <children>
-        <Label layoutX="253.0" layoutY="152.0" text="Select Club:" />
+        <Label layoutX="253.0" layoutY="152.0" text="Select Club:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
         <ComboBox fx:id="clubComboBox" layoutX="417.0" layoutY="150.0" prefWidth="150.0" promptText="Select Club">
             <!-- Add club items to the dropdown -->
             <items>
@@ -25,7 +28,10 @@
                 </FXCollections>
             </items>
         </ComboBox>
-        <Label layoutX="249.0" layoutY="251.0" text="Select Event:" />
+        <Label layoutX="249.0" layoutY="251.0" text="Select Event:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
         <ComboBox fx:id="eventComboBox" layoutX="415.0" layoutY="249.0" prefWidth="150.0" promptText="Select Event">
             <!-- Add event items to the dropdown -->
             <items>
@@ -36,20 +42,22 @@
                 </FXCollections>
             </items>
         </ComboBox>
-        <Label layoutX="261.0" layoutY="355.0" text="Event Code:" />
+        <Label layoutX="261.0" layoutY="355.0" text="Event Code:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
         <TextField fx:id="eventCodeTextField" layoutX="415.0" layoutY="353.0" prefWidth="150.0" promptText="Enter Event Code" />
       <Text fx:id="textId" layoutX="260.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Attendance" wrappingWidth="286.8033142089844">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="347.0" layoutY="436.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="111.0" stylesheets="@CSS/EventAttendance.css" text="Attend" />
+      <Button fx:id="CustomBtn" layoutX="347.0" layoutY="436.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="158.0" text="Attend" textFill="WHITE">
+         <stylesheets>
+            <URL value="@CSS/EventAttendance.css" />
+            <URL value="@CSS/ClubCreation.css" />
+         </stylesheets></Button>
         
     </children>
-   <stylesheets>
-      <URL value="@CSS/AttendanceTrack.css" />
-      <URL value="@CSS/Home.css" />
-      <URL value="@CSS/EventAttendance.css" />
-   </stylesheets>
 
 </AnchorPane>
