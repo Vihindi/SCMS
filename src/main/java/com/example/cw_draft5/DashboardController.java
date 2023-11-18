@@ -125,8 +125,11 @@ public class DashboardController implements Initializable {
 
     @FXML
     void EventAdmin(MouseEvent event) {
-
-
+        try {
+            loadPage("EventScheduling");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

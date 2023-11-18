@@ -1,0 +1,24 @@
+.root{
+ -fx-background-image: url('../Asserts/HomeBackground.jpg');
+ -fx-background-size: 789px 531px;
+ -fx-background-size: cover;
+ -fx-background-repeat:no-repeat;
+
+}
+
+#submit {
+    -fx-background-color: linear-gradient(#166a79, #0c3c45);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    
+}
+
+
+#time1,#time2,#time3,#time4,#time5,#time6 {
+     -fx-background-color: #b06482;
+    -fx-background-radius: 0;
+
+   
+}
+
