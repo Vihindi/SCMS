@@ -10,10 +10,60 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.DashboardController">
    <center>
-      <AnchorPane fx:id="ap" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/Home.css" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="ap" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="795.0" styleClass="root" stylesheets="@CSS/Home.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/Home.css">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <ImageView fx:id="Calendar" fitHeight="220.0" fitWidth="313.0" layoutX="495.0" layoutY="16.0" onMouseClicked="#CalendarClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Asserts/CalenderOption.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="clubList" fitHeight="198.0" fitWidth="215.0" layoutX="76.0" layoutY="32.0" onMouseClicked="#clubListClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Asserts/club.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="eventAttend" fitHeight="206.0" fitWidth="185.0" layoutX="76.0" layoutY="274.0" onMouseClicked="#EventAttendClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Asserts/AttendanceOption.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Report" fitHeight="178.0" fitWidth="186.0" layoutX="525.0" layoutY="293.0" onMouseClicked="#ReportClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Asserts/ReportOption.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="139.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Club List" wrappingWidth="123.47002410888672">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="557.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Calendar" wrappingWidth="123.47002410888672">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="128.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Event Attendance" wrappingWidth="178.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="568.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Report" wrappingWidth="123.47002410888672">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
    </center>
    <left>
       <VBox fx:id="slider" prefHeight="577.0" prefWidth="200.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">

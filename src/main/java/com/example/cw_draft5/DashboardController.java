@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -30,6 +31,18 @@ public class DashboardController implements Initializable {
 
     @FXML
     private AnchorPane ap;
+
+    @FXML
+    private ImageView Calendar;
+
+    @FXML
+    private ImageView Report;
+
+    @FXML
+    private ImageView clubList;
+
+    @FXML
+    private ImageView eventAttend;
 
 
     @FXML
@@ -112,11 +125,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void EventAdmin(MouseEvent event) {
-        try {
-            loadPage("home");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
 
     }
 
@@ -147,5 +156,31 @@ public class DashboardController implements Initializable {
         System.out.println("Slider: " + slider);
         System.out.println("Slider Width: " + slider.getWidth());
     }
+
+    @FXML
+    void CalendarClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void EventAttendClick(MouseEvent event) {
+        try {
+            loadPage("EventAttendance");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @FXML
+    void ReportClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void clubListClick(MouseEvent event) {
+
+    }
+
 
 }

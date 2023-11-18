@@ -1,0 +1,41 @@
+/* Define the button style */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Define the button hover effect */
+.button:hover {
+    background-color: transparent;
+    color: #3498db;
+}
+
+/* Define the button border animation */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3498db;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
