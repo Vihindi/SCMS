@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -21,6 +22,7 @@ public class LoginController {
     public PasswordField passwordField;
     @FXML
     public Label validLogin;
+    public Button loginButton;
     @FXML
     private Stage stage;
     @FXML
@@ -31,7 +33,7 @@ public class LoginController {
 
     @FXML
     public void onClickCreateAccount(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("registerPage.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainRegisterPage.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -40,5 +42,13 @@ public class LoginController {
 
     public void onClickExistAccount(ActionEvent event) {
 
+    }
+
+    public void onClickLogin(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Dashboard.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

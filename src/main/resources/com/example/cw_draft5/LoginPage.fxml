@@ -10,29 +10,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.LoginController">
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecb2dc" height="700.0" layoutX="-11.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-    <Text fill="#580053" layoutX="569.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" AnchorPane.leftAnchor="580.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.LoginController">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecb2dc" height="600.0" layoutX="-11.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <Text fill="#580053" layoutX="501.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" AnchorPane.leftAnchor="501.0">
         <font>
-            <Font name="Lucida Fax Demibold" size="20.0" />
+            <Font name="Lucida Fax Demibold" size="14.0" />
         </font>
     </Text>
-    <TextField fx:id="usernameField" layoutX="719.0" layoutY="245.0" prefHeight="38.0" prefWidth="317.0">
+    <TextField fx:id="usernameField" layoutX="605.0" layoutY="209.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.leftAnchor="605.0" />
+    <Text fill="#580053" layoutX="501.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" AnchorPane.leftAnchor="501.0">
         <font>
-            <Font size="16.0" />
-        </font>
-    </TextField>
-    <Text fill="#580053" layoutX="580.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" AnchorPane.leftAnchor="580.0">
-        <font>
-            <Font name="Lucida Fax Demibold" size="20.0" />
+            <Font name="Lucida Fax Demibold" size="14.0" />
         </font>
     </Text>
-    <PasswordField fx:id="passwordField" layoutX="722.0" layoutY="338.0" prefHeight="38.0" prefWidth="315.0">
-        <font>
-            <Font size="16.0" />
-        </font>
-    </PasswordField>
-    <Button layoutX="785.0" layoutY="475.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="110.0" style="-fx-background-color: #580053;" text="Login" textFill="#ffd1fa">
+    <PasswordField fx:id="passwordField" layoutX="605.0" layoutY="297.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.leftAnchor="605.0" />
+    <Button fx:id="loginButton" layoutX="625.0" layoutY="418.0" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="34.0" prefWidth="110.0" style="-fx-background-color: #580053;" text="Login" textFill="#ffd1fa">
         <font>
             <Font name="Lucida Fax Regular" size="16.0" />
         </font>
@@ -45,26 +37,26 @@
             <Font name="Lucida Fax Italic" size="26.0" />
         </font>
     </Label>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#580053" height="700.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="406.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-    <Button layoutX="74.0" layoutY="570.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="38.0" prefWidth="273.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Create Account" textFill="WHITE">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#580053" height="600.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <Button layoutX="70.0" layoutY="429.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="36.0" prefWidth="206.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Create Account" textFill="WHITE" AnchorPane.bottomAnchor="66.0">
         <font>
-            <Font name="Lucida Fax Regular" size="18.0" />
+            <Font name="Lucida Fax Regular" size="14.0" />
         </font>
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button layoutX="77.0" layoutY="492.0" mnemonicParsing="false" onAction="#onClickExistAccount" prefHeight="36.0" prefWidth="275.0" style="-fx-background-color: #ffd1fa;" text="Already Have an Account" AnchorPane.bottomAnchor="172.0">
+    <Button layoutX="70.0" layoutY="417.0" mnemonicParsing="false" onAction="#onClickExistAccount" prefHeight="42.0" prefWidth="205.0" style="-fx-background-color: #ffd1fa;" text="Already Have an Account" AnchorPane.bottomAnchor="140.60000000000002">
         <font>
-            <Font name="Lucida Fax Regular" size="18.0" />
+            <Font name="Lucida Fax Regular" size="14.0" />
         </font>
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Text fill="#790059" layoutX="605.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER LOGIN FORM" textAlignment="CENTER" wrappingWidth="470.5738983154297">
+    <Text fill="#790059" layoutX="505.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER LOGIN FORM" textAlignment="CENTER" wrappingWidth="355.37388610839844">
         <font>
-            <Font name="Lucida Fax Regular" size="36.0" />
+            <Font name="Lucida Fax Regular" size="18.0" />
         </font>
     </Text>
 </AnchorPane>

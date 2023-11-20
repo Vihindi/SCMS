@@ -22,12 +22,12 @@
             </font>
         </Label>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#580053" height="531.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="261.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <Button layoutX="28.0" layoutY="350.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="205.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE">
+        <Button layoutX="28.0" layoutY="350.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="205.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE" AnchorPane.bottomAnchor="138.0">
             <font>
                 <Font name="Lucida Fax Regular" size="14.0" />
             </font>
         </Button>
-        <Button layoutX="27.0" layoutY="429.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="206.0" style="-fx-background-color: #ffd1fa;" text="Create Account">
+        <Button layoutX="27.0" layoutY="429.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="206.0" style="-fx-background-color: #ffd1fa;" text="Create Account" AnchorPane.bottomAnchor="66.0">
             <font>
                 <Font name="Lucida Fax Regular" size="14.0" />
             </font>
