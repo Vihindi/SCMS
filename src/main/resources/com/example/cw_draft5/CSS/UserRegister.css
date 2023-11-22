@@ -1,0 +1,7 @@
+.root {
+    -fx-background-image: url('../Asserts/HomeBackground.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+
+}

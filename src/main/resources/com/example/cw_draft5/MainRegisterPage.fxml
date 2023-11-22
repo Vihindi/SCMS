@@ -9,12 +9,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@CSS/UserRegister.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.RegisterController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecb2dc" height="700.0" layoutX="-11.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <Button layoutX="689.0" layoutY="226.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: #580053;" text="STUDENT" textFill="#ffd1fa" AnchorPane.leftAnchor="689.0">
+        <Button layoutX="557.0" layoutY="233.0" mnemonicParsing="false" onAction="#onClickStudentRegisterForm" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: purple;" text="STUDENT" textFill="WHITE" AnchorPane.leftAnchor="565.0">
             <font>
-                <Font name="Lucida Fax Regular" size="24.0" />
+                <Font name="Lucida Fax Regular" size="18.0" />
             </font>
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -25,8 +24,24 @@
                 <Font name="Lucida Fax Italic" size="26.0" />
             </font>
         </Label>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#580053" height="700.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="406.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <Button layoutX="74.0" layoutY="570.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="38.0" prefWidth="273.0" style="-fx-background-color: #ffd1fa;" text="Create Account">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="600.0" layoutX="-109.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-109.0" AnchorPane.topAnchor="0.0" />
+        <Button layoutX="74.0" layoutY="570.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #ffd1fa;" text="Create Account" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="59.0">
+            <font>
+                <Font name="Lucida Fax Regular" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="77.0" layoutY="492.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="59.0">
+            <font>
+                <Font name="Lucida Fax Regular" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="557.0" layoutY="483.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: purple;" text="CLUB ADVISOR" textFill="WHITE" AnchorPane.leftAnchor="565.0">
             <font>
                 <Font name="Lucida Fax Regular" size="18.0" />
             </font>
@@ -34,28 +49,12 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="77.0" layoutY="492.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="275.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE" AnchorPane.bottomAnchor="172.0">
-            <font>
-                <Font name="Lucida Fax Regular" size="18.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Button layoutX="686.0" layoutY="524.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: #580053;" text="CLUB ADVISOR" textFill="#ffd1fa" AnchorPane.leftAnchor="686.0">
-            <font>
-                <Font name="Lucida Fax Regular" size="24.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <ImageView fitHeight="135.0" fitWidth="139.0" layoutX="748.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="135.0" fitWidth="139.0" layoutX="610.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="630.0">
             <image>
                 <Image url="@Asserts/Student.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="128.0" fitWidth="122.0" layoutX="757.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="128.0" fitWidth="122.0" layoutX="631.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="630.0">
             <image>
                 <Image url="@Asserts/operator.png" />
             </image>

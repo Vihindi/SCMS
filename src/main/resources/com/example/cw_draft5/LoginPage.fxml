@@ -10,8 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.LoginController">
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecb2dc" height="600.0" layoutX="-11.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@CSS/UserRegister.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.LoginController">
     <Text fill="#580053" layoutX="501.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" AnchorPane.leftAnchor="501.0">
         <font>
             <Font name="Lucida Fax Demibold" size="14.0" />
@@ -37,18 +36,18 @@
             <Font name="Lucida Fax Italic" size="26.0" />
         </font>
     </Label>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#580053" height="600.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-    <Button layoutX="70.0" layoutY="429.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="36.0" prefWidth="206.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Create Account" textFill="WHITE" AnchorPane.bottomAnchor="66.0">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="600.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <Button layoutX="59.0" layoutY="429.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Create Account" textFill="WHITE" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="59.0">
         <font>
-            <Font name="Lucida Fax Regular" size="14.0" />
+            <Font name="Lucida Fax Regular" size="12.0" />
         </font>
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button layoutX="70.0" layoutY="417.0" mnemonicParsing="false" onAction="#onClickExistAccount" prefHeight="42.0" prefWidth="205.0" style="-fx-background-color: #ffd1fa;" text="Already Have an Account" AnchorPane.bottomAnchor="140.60000000000002">
+    <Button layoutX="59.0" layoutY="414.0" mnemonicParsing="false" onAction="#onClickExistAccount" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #ffd1fa;" text="Already Have an Account" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="59.0">
         <font>
-            <Font name="Lucida Fax Regular" size="14.0" />
+            <Font name="Lucida Fax Regular" size="12.0" />
         </font>
         <cursor>
             <Cursor fx:constant="HAND" />
