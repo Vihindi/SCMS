@@ -52,7 +52,7 @@ public class ClubCreationController {
         // Show a success message to the user
         showSuccessAlert();
     }
-
+    
     private void showSuccessAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
@@ -60,4 +60,5 @@ public class ClubCreationController {
         alert.setContentText("Club created successfully!");
         alert.showAndWait();
     }
+
 }
