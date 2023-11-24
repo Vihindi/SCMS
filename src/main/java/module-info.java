@@ -1,4 +1,4 @@
-module com.example.cw_draft5 {
+module com.example {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.jfoenix;

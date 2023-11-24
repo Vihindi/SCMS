@@ -24,8 +24,8 @@
                 <Font name="Lucida Fax Italic" size="26.0" />
             </font>
         </Label>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="600.0" layoutX="-109.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-109.0" AnchorPane.topAnchor="0.0" />
-        <Button layoutX="74.0" layoutY="570.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #ffd1fa;" text="Create Account" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="59.0">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="600.0" layoutX="-1.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="346.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+        <Button layoutX="74.0" layoutY="570.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #ffd1fa;" text="Create Account" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="491.0">
             <font>
                 <Font name="Lucida Fax Regular" size="12.0" />
             </font>
@@ -33,7 +33,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="77.0" layoutY="492.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="59.0">
+        <Button layoutX="77.0" layoutY="492.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickExistAccount" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="414.0">
             <font>
                 <Font name="Lucida Fax Regular" size="12.0" />
             </font>
@@ -41,7 +41,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="557.0" layoutY="483.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: purple;" text="CLUB ADVISOR" textFill="WHITE" AnchorPane.leftAnchor="565.0">
+        <Button layoutX="557.0" layoutY="483.0" mnemonicParsing="false" onAction="#onClickClubAdvisorRegisterForm" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: purple;" text="CLUB ADVISOR" textFill="WHITE" AnchorPane.leftAnchor="565.0">
             <font>
                 <Font name="Lucida Fax Regular" size="18.0" />
             </font>

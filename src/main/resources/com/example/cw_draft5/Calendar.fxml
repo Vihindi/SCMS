@@ -2,30 +2,21 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="531.0" prefWidth="789.0" stylesheets="@CSS/EventSheduling.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.CalendarController">
+<AnchorPane prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/EventSheduling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.CalendarController">
     <children>
-        <ImageView fitHeight="531.0" fitWidth="789.0" layoutX="14.0">
-            <image>
-                <Image url="@Asserts/HomeBackground.jpg" />
-            </image>
-        </ImageView>
-        <TableView fx:id="eventTable" layoutX="14.0" layoutY="113.0" prefHeight="363.0" prefWidth="774.0">
+        <TableView layoutX="84.0" layoutY="115.0" prefHeight="363.0" prefWidth="634.0">
             <columns>
-                <TableColumn fx:id="clubID" prefWidth="69.0" text="Club ID" />
-                <TableColumn fx:id="eventID" prefWidth="68.0" text="Event ID" />
-                <TableColumn fx:id="eventName" prefWidth="93.0" text="Event Name" />
-                <TableColumn fx:id="date" prefWidth="72.0" text="Date" />
-                <TableColumn fx:id="eventCode" prefWidth="90.0" text="Event Code" />
-                <TableColumn fx:id="mode" text="Mode" />
-                <TableColumn fx:id="venue" prefWidth="79.0" text="Venue" />
-            <TableColumn fx:id="timeSlot" prefWidth="91.0" text="Time Slot" />
-            <TableColumn fx:id="description" prefWidth="141.0" text="Description" />
+                <TableColumn prefWidth="76.0" text="Club " />
+                <TableColumn prefWidth="98.0" text="Event Name" />
+                <TableColumn prefWidth="71.0" text="Date" />
+                <TableColumn prefWidth="79.0" text="Venue" />
+                <TableColumn prefWidth="90.0" text="Time slot" />
+                <TableColumn prefWidth="88.0" text="Event Code" />
+                <TableColumn prefWidth="131.0" text="Description" />
             </columns>
         </TableView>
         <Text layoutX="230.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UPCOMING EVENTS" wrappingWidth="430.90087890625">
