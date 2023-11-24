@@ -33,11 +33,13 @@ package com.example.cw_draft5;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import java.sql.*;
 
 public class DatabaseConnection {
-    static final String url = "jdbc:mysql://localhost:3306/SACMS";
+    static final String url = "jdbc:mysql://localhost:3306/scams";
     static final String user = "root";
     static final String password = "";
 
@@ -96,4 +98,5 @@ public class DatabaseConnection {
         }
         return EventNames;
     }
+
 }
