@@ -15,8 +15,8 @@ public class AddUserDataIntoDatabase {
     private String Contact;
     private String Gender;
     private String Email;
-    private String Location;
-    private int Grade;
+   private String Location;
+   private int Grade;
     private String Guardian;
     private String Skills;
     private String Password;
@@ -55,17 +55,17 @@ public class AddUserDataIntoDatabase {
             s.executeLargeUpdate();
         }catch (SQLException ex){
             System.out.println(ex.toString());
-        }finally {
+       }finally {
             close();
         }
     }
     private void close(){
-        try{
+       try{
             con.close();
             System.out.println("Connection closed");
         }catch (SQLException ex){
 
         }
-    }
+   }
 
 }
