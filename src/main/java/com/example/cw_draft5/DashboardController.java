@@ -157,8 +157,6 @@ public class DashboardController implements Initializable {
             throw e;
         }
 
-        System.out.println("Slider: " + slider);
-        System.out.println("Slider Width: " + slider.getWidth());
     }
 
     @FXML
