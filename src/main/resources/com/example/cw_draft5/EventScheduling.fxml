@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" stylesheets="@CSS/EventSheduling.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.EventSchedulingController">
     <children>
-        <ImageView fitHeight="531.0" fitWidth="789.0">
+        <ImageView fitHeight="531.0" fitWidth="789.0" layoutY="-5.0">
             <image>
                 <Image url="@Asserts/HomeBackground.jpg" />
             </image>
@@ -26,31 +26,31 @@
                 <Font name="Berlin Sans FB" size="40.0" />
             </font>
         </Text>
-        <TextField fx:id="eventName" layoutX="220.0" layoutY="142.0" prefHeight="30.0" prefWidth="244.0" />
-        <Text layoutX="56.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Club Name">
+        <TextField fx:id="ClubID" layoutX="191.0" layoutY="141.0" prefHeight="30.0" prefWidth="244.0" />
+        <Text layoutX="52.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Club ID">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
-        <DatePicker layoutX="220.0" layoutY="218.0" prefHeight="30.0" prefWidth="244.0" />
-        <Text layoutX="56.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+        <DatePicker fx:id="Date" layoutX="191.0" layoutY="251.0" prefHeight="30.0" prefWidth="244.0" />
+        <Text layoutX="53.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
 
-        <TextField layoutX="220.0" layoutY="260.0" prefHeight="30.0" prefWidth="244.0" />
-        <Text layoutX="56.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Code">
+        <TextField fx:id="EventCode" layoutX="191.0" layoutY="293.0" prefHeight="30.0" prefWidth="244.0" />
+        <Text layoutX="46.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Code">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
-        <Text layoutX="56.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Description">
+        <Text layoutX="41.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Description">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="myChoiceBox" layoutX="584.0" layoutY="143.0" prefHeight="30.0" prefWidth="185.0">
+        <ChoiceBox fx:id="Mode" layoutX="584.0" layoutY="143.0" prefHeight="30.0" prefWidth="185.0">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Physical" />
@@ -58,13 +58,13 @@
                 </FXCollections>
             </items>
         </ChoiceBox>
-        <Text layoutX="514.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Slot">
+        <Text layoutX="514.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Slot">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
-        <TextArea layoutX="220.0" layoutY="303.0" prefHeight="84.0" prefWidth="244.0" promptText="Online meeting links and URL's can also be included" />
-        <Button fx:id="submit" layoutX="367.0" layoutY="439.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" text="Submit">
+        <TextArea fx:id="Description" layoutX="191.0" layoutY="339.0" prefHeight="84.0" prefWidth="244.0" promptText="Online meeting links and URL's can also be included" />
+        <Button fx:id="submit" layoutX="360.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#submitClicked" prefHeight="44.0" prefWidth="132.0" text="Submit">
             <font>
                 <Font name="Arial Bold" size="17.0" />
             </font>
@@ -72,32 +72,29 @@
                 <Glow />
             </effect>
         </Button>
-        <Text layoutX="56.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name">
+        <Text layoutX="53.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
-        <TextField fx:id="eventName1" layoutX="220.0" layoutY="179.0" prefHeight="30.0" prefWidth="244.0" />
+        <TextField fx:id="EventName" layoutX="191.0" layoutY="215.0" prefHeight="30.0" prefWidth="244.0" />
         <Text layoutX="514.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Venue">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
-        <TextField fx:id="eventName11" layoutX="584.0" layoutY="180.0" prefHeight="30.0" prefWidth="185.0" />
-        <Button fx:id="time1" layoutX="517.0" layoutY="260.0" mnemonicParsing="false" opacity="0.89" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #f48686; -fx-background-size: 10;" text="8AM">
-            <font>
-                <Font size="13.0" />
-            </font>
-        </Button>
-        <Button fx:id="time3" layoutX="684.0" layoutY="260.0" mnemonicParsing="false" opacity="0.89" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #f48686;" text="12PM" />
-        <Button fx:id="time4" layoutX="517.0" layoutY="303.0" mnemonicParsing="false" opacity="0.89" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #f48686;" text="2PM" />
-        <Button fx:id="time6" layoutX="684.0" layoutY="303.0" mnemonicParsing="false" opacity="0.89" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #f48686;" text="6PM" />
-        <Button fx:id="time5" layoutX="602.0" layoutY="303.0" mnemonicParsing="false" opacity="0.89" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #f48686;" text="4PM" />
-        <Button fx:id="time2" layoutX="602.0" layoutY="260.0" mnemonicParsing="false" opacity="0.89" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #f48686;" text="10PM" />
+        <TextField fx:id="Venue" layoutX="584.0" layoutY="180.0" prefHeight="30.0" prefWidth="185.0" />
         <Text layoutX="514.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Text>
+      <Text layoutX="52.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="EventID" layoutX="191.0" layoutY="178.0" prefHeight="30.0" prefWidth="244.0" />
+      <TextField fx:id="TimeSlot" layoutX="514.0" layoutY="251.0" prefHeight="30.0" prefWidth="201.0" />
     </children>
 </AnchorPane>
