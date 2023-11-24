@@ -1,8 +1,9 @@
-module com.example.cw_draft5 {
+module com.example {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.jfoenix;
     requires java.sql;
+    requires mysql.connector.java;
 
 
     opens com.example.cw_draft5 to javafx.fxml;

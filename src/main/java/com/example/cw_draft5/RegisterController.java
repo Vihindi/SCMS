@@ -22,11 +22,6 @@ public class RegisterController {
     public Label validLogin;
 
 
-
-    public void onClickCreateAccount(ActionEvent event) {
-
-    }
-
     public void onClickStudentRegisterForm(ActionEvent event) {
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentRegister.fxml")));
@@ -39,4 +34,19 @@ public class RegisterController {
         }
     }
 
+    public void onClickExistAccount(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LoginPage.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onClickClubAdvisorRegisterForm(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StudentRegister.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
