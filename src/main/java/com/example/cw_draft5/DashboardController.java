@@ -190,6 +190,11 @@ public class DashboardController implements Initializable {
 
     @FXML
     void ReportClick(MouseEvent event) {
+        try {
+            loadPage("ClubActivityReport");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

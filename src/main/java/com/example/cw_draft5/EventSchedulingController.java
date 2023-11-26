@@ -67,11 +67,15 @@ public class EventSchedulingController {
         // Create an Event object
         Event eventToAdd = new Event();
 
+
         // Add the event to the database
         AddEventIntoDatabase.addToDatabase(eventToAdd, selectedClub);
 
         // Show a success alert
         showSuccessAlert();
+
+
+
     }
 
 
@@ -83,3 +87,4 @@ public class EventSchedulingController {
         alert.showAndWait();
     }
 }
+

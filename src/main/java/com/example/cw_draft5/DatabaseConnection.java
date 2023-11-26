@@ -35,6 +35,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class DatabaseConnection {
     static final String url = "jdbc:mysql://localhost:3306/scms";
@@ -71,6 +72,36 @@ public class DatabaseConnection {
         }
         return clubNames;
     }
+    public ObservableList<Event> getEventsForClub(int clubID) {
+        ObservableList<Event> events = FXCollections.observableArrayList();
+
+        try (Connection connection = getConnection()) {
+            String query = "SELECT * FROM eventscheduling WHERE clubID = ?";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setInt(1, clubID);
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        int eventId = resultSet.getInt("eventID");
+                        String eventName = resultSet.getString("eventName");
+                        LocalDate eventDate = resultSet.getDate("eventDate").toLocalDate();
+                        String eventCode = resultSet.getString("eventCode");
+                        String mode = resultSet.getString("mode");
+                        String venue = resultSet.getString("venue");
+                        String timeSlot = resultSet.getString("timeSlot");
+                        String description = resultSet.getString("description");
+
+                        Event event = new Event(clubID, eventId, eventName, eventDate, eventCode, mode, venue, timeSlot, description);
+                        events.add(event);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle database errors
+        }
+        return events;
+    }
+
 
     public ObservableList<String> getEventNames(String selectedClub) {
         ObservableList<String> eventNames = FXCollections.observableArrayList();
@@ -117,7 +148,7 @@ public class DatabaseConnection {
         }
     }
 
-    private int getClubID(String clubName) {
+    int getClubID(String clubName) {
         try (Connection connection = getConnection()) {
             String query = "SELECT clubID FROM club WHERE Name = ?";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
