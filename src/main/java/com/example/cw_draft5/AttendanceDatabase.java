@@ -61,7 +61,7 @@ public class AttendanceDatabase {
 
     public static void main(String[] args) {
         AttendanceDatabase AD = new AttendanceDatabase();
-        System.out.println(AD.getClubNames());
+       // System.out.println(AD.getClubNames());
     }
 
 }
