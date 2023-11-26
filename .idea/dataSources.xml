@@ -6,6 +6,7 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://localhost:3306/scams</jdbc-url>
+    </data-source>
     <data-source source="LOCAL" name="scms@localhost" uuid="ad5badca-7d52-4e81-a1ee-80586d0fb493">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
