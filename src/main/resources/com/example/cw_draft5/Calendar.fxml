@@ -36,7 +36,7 @@
             <Glow />
          </effect>
       </Button>
-      <Button fx:id="delete" layoutX="436.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#deleteClicked" prefHeight="36.0" prefWidth="119.0" text="Delete">
+      <Button fx:id="delete" layoutX="436.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#deleteClicked"  prefHeight="36.0" prefWidth="119.0" text="Delete">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>

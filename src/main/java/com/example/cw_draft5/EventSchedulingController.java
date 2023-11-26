@@ -1,24 +1,14 @@
 package com.example.cw_draft5;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.Objects;
+import java.time.LocalDate;
 
 public class EventSchedulingController {
 
-    @FXML
-    private TextField ClubID;
 
-    @FXML
-    private TextField EventID;
 
     @FXML
     private TextField EventName;
@@ -38,9 +28,11 @@ public class EventSchedulingController {
     @FXML
     private TextField Venue;
 
-
     @FXML
     private TextField TimeSlot;
+
+    @FXML
+    private ComboBox<String> ClubName;
 
     @FXML
     private Button submit;
@@ -48,32 +40,40 @@ public class EventSchedulingController {
     @FXML
     private ChoiceBox<String> myChoiceBox;
 
+    private AttendanceDatabase attendanceDatabase;
+
     @FXML
-    void viewCalendar(MouseEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Calendar.fxml")));
-        stage.setScene(new Scene(root, 789, 531));
+    void initialize() {
+        attendanceDatabase = new AttendanceDatabase();
+        populateClubNames();
+    }
+
+    private void populateClubNames() {
+        ClubName.setItems(attendanceDatabase.getClubNames());
     }
 
     @FXML
     void submitClicked(MouseEvent event) {
-        Event newEvent = new Event(
-                Integer.parseInt(ClubID.getText()),
-                Integer.parseInt(EventID.getText()),
-                EventName.getText(),
-                Date.getValue(),
-                EventCode.getText(),
-                Mode.getValue(),
-                Venue.getText(),
-                TimeSlot.getText(),
-                Description.getText()
-        );
+        // Retrieve values from UI components
+        String eventName = EventName.getText();
+        LocalDate eventDate = Date.getValue();
+        String eventCode = EventCode.getText();
+        String mode = Mode.getValue(); // Assuming Mode is a ChoiceBox or similar
+        String venue = Venue.getText();
+        String timeSlot = TimeSlot.getText();
+        String description = Description.getText();
+        String selectedClub = ClubName.getValue();
 
-        AddEventIntoDatabase.addToDatabase(newEvent);
+        // Create an Event object
+        Event eventToAdd = new Event();
 
-        // Show a success message to the user
+        // Add the event to the database
+        AddEventIntoDatabase.addToDatabase(eventToAdd, selectedClub);
+
+        // Show a success alert
         showSuccessAlert();
     }
+
 
     private void showSuccessAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -82,5 +82,4 @@ public class EventSchedulingController {
         alert.setContentText("Event created successfully!");
         alert.showAndWait();
     }
-
 }
