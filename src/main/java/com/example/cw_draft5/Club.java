@@ -2,7 +2,7 @@ package com.example.cw_draft5;
 
 import java.time.LocalDate;
 
-public class Club {
+public class Club extends DisplayClubs {
 
     public static Integer clubID;
     public static String clubName;
@@ -11,6 +11,13 @@ public class Club {
     public static LocalDate startDate;
     public static Integer clubAdvisorID;
     public static String clubBenefits;
+
+    public Club(int clubID, String clubName, String clubDescription, String clubBenefits) {
+        Club.clubID = clubID;
+        Club.clubName = clubName;
+        Club.clubDescription = clubDescription;
+        Club.clubBenefits = clubBenefits;
+    }
 
     public Club(int clubID, String clubName, String clubDescription, String clubMission, LocalDate startDate, Integer clubAdvisorID, String clubBenefits) {
         Club.clubID = clubID;

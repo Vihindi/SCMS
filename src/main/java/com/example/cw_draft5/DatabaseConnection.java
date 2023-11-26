@@ -39,7 +39,7 @@ import java.sql.DriverManager;
 import java.sql.*;
 
 public class DatabaseConnection {
-    static final String url = "jdbc:mysql://localhost:3306/scams";
+    static final String url = "jdbc:mysql://localhost:3306/SACMS";
     static final String user = "root";
     static final String password = "";
 

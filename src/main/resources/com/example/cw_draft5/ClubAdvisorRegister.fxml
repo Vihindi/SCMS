@@ -13,26 +13,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.ClubAdvisorRegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@CSS/UserRegister.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.ClubAdvisorRegisterController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecb2dc" height="531.0" layoutX="-11.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="789.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <Label fx:id="validLogin" alignment="CENTER" contentDisplay="CENTER" layoutX="677.0" layoutY="590.0" prefHeight="20.0" prefWidth="398.0" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Lucida Fax Italic" size="26.0" />
             </font>
         </Label>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#580053" height="531.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="261.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <Button layoutX="28.0" layoutY="350.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="205.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE" AnchorPane.bottomAnchor="138.0">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="600.0" layoutX="47.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="346.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Button layoutX="28.0" layoutY="350.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="205.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="414.0">
             <font>
-                <Font name="Lucida Fax Regular" size="14.0" />
+                <Font name="Lucida Fax Regular" size="12.0" />
             </font>
         </Button>
-        <Button layoutX="27.0" layoutY="429.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="206.0" style="-fx-background-color: #ffd1fa;" text="Create Account" AnchorPane.bottomAnchor="66.0">
+        <Button layoutX="27.0" layoutY="429.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="206.0" style="-fx-background-color: #ffd1fa;" text="Create Account" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="491.0">
             <font>
-                <Font name="Lucida Fax Regular" size="14.0" />
+                <Font name="Lucida Fax Regular" size="12.0" />
             </font>
         </Button>
-        <Text layoutX="324.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER REGISTER FORM" textAlignment="CENTER" wrappingWidth="429.89686584472656">
+        <Text layoutX="473.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER REGISTER FORM" textAlignment="CENTER" wrappingWidth="429.89686584472656" AnchorPane.leftAnchor="473.0">
             <font>
                 <Font name="Lucida Fax Demibold" size="18.0" />
             </font>
@@ -53,46 +52,46 @@
                 </LinearGradient>
             </fill>
         </Text>
-        <Text layoutX="346.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" AnchorPane.bottomAnchor="407.0" AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="107.0">
+        <Text layoutX="519.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" AnchorPane.bottomAnchor="426.046875" AnchorPane.leftAnchor="519.0" AnchorPane.topAnchor="157.46484375">
             <font>
                 <Font name="Lucida Fax Regular" size="14.0" />
             </font>
         </Text>
-        <TextField layoutX="482.0" layoutY="102.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="403.0" AnchorPane.leftAnchor="482.0" />
-        <Text layoutX="350.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" AnchorPane.bottomAnchor="355.0" AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="158.0">
+        <TextField layoutX="688.0" layoutY="153.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="421.0" AnchorPane.leftAnchor="688.0" />
+        <Text layoutX="520.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" AnchorPane.bottomAnchor="366.046875" AnchorPane.leftAnchor="519.0" AnchorPane.topAnchor="217.46484375">
             <font>
                 <Font name="Lucida Fax Regular" size="14.0" />
             </font>
         </Text>
-        <Text layoutX="329.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." AnchorPane.bottomAnchor="179.046875" AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="265.0">
+        <Text layoutX="498.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." AnchorPane.bottomAnchor="256.046875" AnchorPane.leftAnchor="519.0" AnchorPane.topAnchor="327.46484375">
             <font>
                 <Font name="Lucida Fax Regular" size="14.0" />
             </font>
         </Text>
-        <Text layoutX="341.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" AnchorPane.bottomAnchor="304.046875" AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="210.0">
+        <Text layoutX="510.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" AnchorPane.bottomAnchor="311.046875" AnchorPane.leftAnchor="519.0" AnchorPane.topAnchor="272.46484375">
             <font>
                 <Font name="Lucida Fax Regular" size="14.0" />
             </font>
         </Text>
-        <Button layoutX="415.0" layoutY="449.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="206.0" style="-fx-background-color: #7a18bc;" text="Register" textFill="WHITE">
+        <Button layoutX="598.0" layoutY="525.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="181.0" style="-fx-background-color: #580053;" text="Register" textFill="WHITE">
             <font>
-                <Font name="Lucida Fax Demibold" size="16.0" />
+                <Font name="Lucida Fax Regular" size="16.0" />
             </font>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <TextField layoutX="482.0" layoutY="266.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="244.0" AnchorPane.leftAnchor="482.0" />
-        <TextField layoutX="495.0" layoutY="322.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="191.0" AnchorPane.leftAnchor="482.0" />
-        <TextField layoutX="482.0" layoutY="145.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="482.0" />
-        <PasswordField layoutX="482.0" layoutY="425.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2;" AnchorPane.bottomAnchor="138.0" AnchorPane.leftAnchor="482.0" />
-        <Text layoutX="324.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Password" AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="372.0">
+        <TextField layoutX="703.0" layoutY="323.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="251.0" AnchorPane.leftAnchor="688.0" />
+        <TextField layoutX="731.0" layoutY="388.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="688.0" />
+        <TextField layoutX="688.0" layoutY="213.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="688.0" />
+        <PasswordField layoutX="724.0" layoutY="444.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2;" AnchorPane.bottomAnchor="130.39999999999998" AnchorPane.leftAnchor="688.0" />
+        <Text layoutX="508.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Password" AnchorPane.leftAnchor="519.0" AnchorPane.topAnchor="448.46484375">
             <font>
                 <Font name="Lucida Fax Regular" size="14.0" />
             </font>
         </Text>
-        <TextField layoutX="465.0" layoutY="206.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="297.0" AnchorPane.leftAnchor="482.0" />
-      <Text layoutX="330.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" AnchorPane.bottomAnchor="131.046875" AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="315.0">
+        <TextField layoutX="703.0" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="306.0" AnchorPane.leftAnchor="688.0" />
+      <Text layoutX="508.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" AnchorPane.bottomAnchor="195.046875" AnchorPane.leftAnchor="519.0" AnchorPane.topAnchor="388.46484375">
          <font>
             <Font name="Lucida Fax Regular" size="14.0" />
          </font>
