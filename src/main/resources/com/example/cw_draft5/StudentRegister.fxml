@@ -21,7 +21,7 @@
     <left>
         <VBox prefHeight="600.0" prefWidth="345.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
             <children>
-                <Button layoutX="77.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE">
+                <Button layoutX="77.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickExistAccount" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #580053; -fx-border-color: #ffd1fa;" text="Already Have an Account" textFill="WHITE">
                     <VBox.margin>
                         <Insets left="59.0" top="410.0" />
                     </VBox.margin>
@@ -29,7 +29,7 @@
                   <Font name="Lucida Fax Regular" size="12.0" />
                </font>
                 </Button>
-                <Button layoutX="74.0" layoutY="570.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #ffd1fa;" text="Create Account">
+                <Button layoutX="74.0" layoutY="570.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="42.0" prefWidth="226.0" style="-fx-background-color: #ffd1fa;" text="Create Account">
                     <VBox.margin>
                         <Insets bottom="2.0" left="59.0" top="40.0" />
                     </VBox.margin>
@@ -42,7 +42,7 @@
     <center>
         <ScrollPane prefHeight="266.0" prefWidth="672.0" BorderPane.alignment="CENTER">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1114.0" prefWidth="638.0" stylesheets="@CSS/UserRegister.css">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1114.0" prefWidth="638.0" styleClass="root" stylesheets="@CSS/UserRegister.css">
                     <children>
                         <Text layoutX="124.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER REGISTER FORM" textAlignment="CENTER" translateY="20.0" wrappingWidth="429.89686584472656">
                             <font>
@@ -65,73 +65,67 @@
                                 </LinearGradient>
                             </fill>
                         </Text>
-                        <Text layoutX="-5.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="945.8031249999999" AnchorPane.leftAnchor="-5.0" AnchorPane.topAnchor="130.0">
+                        <Text layoutX="-7.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="920.4468750000001" AnchorPane.leftAnchor="-7.0" AnchorPane.topAnchor="177.46484375">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="fullName" layoutX="170.0" layoutY="145.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" translateX="60.0" AnchorPane.bottomAnchor="938.1999999999999" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="145.0" />
-                        <Text layoutX="-1.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" translateX="100.0" translateY="10.0" AnchorPane.bottomAnchor="890.6468749999999" AnchorPane.leftAnchor="-1.0">
+                        <TextField fx:id="fullName" layoutX="168.0" layoutY="192.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" translateX="60.0" AnchorPane.bottomAnchor="891.1999999999999" AnchorPane.leftAnchor="168.0" AnchorPane.topAnchor="192.0" />
+                        <Text layoutX="-3.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" translateX="100.0" translateY="10.0" AnchorPane.bottomAnchor="844.4468750000001" AnchorPane.leftAnchor="-3.0">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <DatePicker fx:id="dateOfBirth" layoutX="117.0" layoutY="210.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2;" translateX="110.0" AnchorPane.bottomAnchor="873.1999999999999" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="210.0" />
-                        <Text layoutX="-5.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="835.6468749999999" AnchorPane.leftAnchor="-5.0">
+                        <DatePicker fx:id="dateOfBirth" layoutX="118.0" layoutY="257.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2;" translateX="110.0" AnchorPane.bottomAnchor="826.1999999999999" AnchorPane.leftAnchor="118.0" AnchorPane.topAnchor="257.0" />
+                        <Text layoutX="-7.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="789.4468750000001" AnchorPane.leftAnchor="-7.0">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="contactNo" layoutX="265.0" layoutY="282.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="807.0" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="275.0" />
-                        <Text layoutX="-4.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="770.6468749999999" AnchorPane.leftAnchor="-5.0">
+                        <TextField fx:id="contactNo" layoutX="228.0" layoutY="322.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="760.0" AnchorPane.leftAnchor="228.0" AnchorPane.topAnchor="322.0" />
+                        <Text layoutX="-7.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="724.4468750000001" AnchorPane.leftAnchor="-7.0">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="genderType" layoutX="265.0" layoutY="349.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="740.0" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="340.0" />
-                        <Text layoutX="-2.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" translateX="100.0" translateY="20.0" AnchorPane.leftAnchor="-5.0" AnchorPane.topAnchor="400.46484375">
+                        <TextField fx:id="genderType" layoutX="228.0" layoutY="387.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="693.0" AnchorPane.leftAnchor="228.0" AnchorPane.topAnchor="387.0" />
+                        <Text layoutX="-7.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" translateX="100.0" translateY="20.0" AnchorPane.leftAnchor="-7.0" AnchorPane.topAnchor="447.46484375">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="emailAddress" layoutX="227.0" layoutY="412.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="671.1999999999999" AnchorPane.leftAnchor="230.0" />
-                        <Text layoutX="-5.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" translateX="100.0" translateY="10.0" AnchorPane.bottomAnchor="620.6468749999999" AnchorPane.leftAnchor="-5.0">
+                        <TextField fx:id="emailAddress" layoutX="228.0" layoutY="460.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="624.0000000000001" AnchorPane.leftAnchor="228.0" />
+                        <Text layoutX="-7.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" translateX="100.0" translateY="10.0" AnchorPane.bottomAnchor="574.4468750000001" AnchorPane.leftAnchor="-7.0">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="userLocation" layoutX="226.0" layoutY="477.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="606.1999999999999" AnchorPane.leftAnchor="230.0" />
-                        <Text layoutX="-2.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="571.6468749999999" AnchorPane.leftAnchor="-5.0">
+                        <TextField fx:id="userLocation" layoutX="228.0" layoutY="525.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="559.0000000000001" AnchorPane.leftAnchor="228.0" />
+                        <Text layoutX="-7.0" layoutY="586.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="525.4468750000001" AnchorPane.leftAnchor="-7.0">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="grade" layoutX="226.0" layoutY="540.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="543.1999999999999" AnchorPane.leftAnchor="230.0" />
-                        <Text layoutX="-4.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class Teacher" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="505.6468749999999" AnchorPane.leftAnchor="-5.0">
+                        <TextField fx:id="grade" layoutX="228.0" layoutY="588.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="496.0000000000001" AnchorPane.leftAnchor="228.0" />
+                        <Text layoutX="-5.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guardian" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="465.4468750000001" AnchorPane.leftAnchor="-5.0" AnchorPane.topAnchor="632.46484375">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="classTeacherName" layoutX="228.0" layoutY="604.0" prefHeight="30.0" prefWidth="226.0" promptText="Name" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="479.19999999999993" AnchorPane.leftAnchor="230.0" />
-                        <Text layoutX="-2.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guardian" translateX="100.0" translateY="20.0" AnchorPane.bottomAnchor="435.6468749999999" AnchorPane.leftAnchor="-5.0">
+                        <TextField fx:id="guardianName" layoutX="228.0" layoutY="645.0" prefHeight="30.0" prefWidth="226.0" promptText="Name" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="439.0000000000001" AnchorPane.leftAnchor="228.0" AnchorPane.topAnchor="645.0" />
+                        <Text layoutY="730.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skills" translateX="100.0" AnchorPane.bottomAnchor="381.4468750000001" AnchorPane.leftAnchor="0.0">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="guardianName" layoutX="223.0" layoutY="674.0" prefHeight="30.0" prefWidth="226.0" promptText="Name" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="409.19999999999993" AnchorPane.leftAnchor="230.0" />
-                        <Text layoutX="1.0" layoutY="762.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skills" translateX="100.0" AnchorPane.bottomAnchor="348.6468749999999" AnchorPane.leftAnchor="-5.0">
+                        <TextArea fx:id="skills" layoutX="228.0" layoutY="717.0" prefHeight="140.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2;" AnchorPane.leftAnchor="228.0" />
+                        <Text layoutX="98.0" layoutY="925.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Password" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="911.46484375">
                             <font>
                                 <Font name="Lucida Fax Regular" size="14.0" />
                             </font>
                         </Text>
-                        <TextArea fx:id="skills" layoutX="230.0" layoutY="744.0" prefHeight="140.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2;" AnchorPane.leftAnchor="230.0" />
-                        <Text layoutX="91.0" layoutY="945.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Password" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="931.46484375">
-                            <font>
-                                <Font name="Lucida Fax Regular" size="14.0" />
-                            </font>
-                        </Text>
-                        <PasswordField fx:id="setPassword" layoutX="230.0" layoutY="925.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2;" AnchorPane.bottomAnchor="158.19999999999993" AnchorPane.leftAnchor="230.0" />
-                        <Button layoutX="121.0" layoutY="1038.0" mnemonicParsing="false" onAction="#onClickStudentRegister" prefHeight="38.0" prefWidth="414.0" style="-fx-background-color: #580053;" text="Register" textFill="WHITE">
+                        <PasswordField fx:id="setPassword" layoutX="228.0" layoutY="904.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2;" AnchorPane.bottomAnchor="180.0000000000001" AnchorPane.leftAnchor="228.0" />
+                        <Button layoutX="119.0" layoutY="1004.0" mnemonicParsing="false" onAction="#onClickStudentRegister" prefHeight="38.0" prefWidth="414.0" style="-fx-background-color: #580053;" text="Register" textFill="WHITE">
                             <font>
                                 <Font name="Lucida Fax Demibold" size="16.0" />
                             </font>
@@ -139,8 +133,13 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <TextField fx:id="classTeacherNo" layoutX="474.0" layoutY="605.0" prefHeight="30.0" prefWidth="140.0" promptText="Contact No" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="478.19999999999993" AnchorPane.leftAnchor="472.0" />
-                        <TextField fx:id="guardianNo" layoutX="472.0" layoutY="673.0" prefHeight="30.0" prefWidth="140.0" promptText="Contact No" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="410.19999999999993" AnchorPane.leftAnchor="472.0" />
+                        <TextField fx:id="guardianNo" layoutX="474.0" layoutY="646.0" prefHeight="30.0" prefWidth="140.0" promptText="Contact Number" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.bottomAnchor="439.0000000000001" AnchorPane.leftAnchor="474.0" AnchorPane.topAnchor="646.0" />
+                  <Text layoutX="92.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Number">
+                     <font>
+                        <Font name="Lucida Fax Regular" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="studentID" layoutX="228.0" layoutY="136.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" />
                     </children>
                 </AnchorPane>
             </content>

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Club {
+public class Club extends DisplayClubs {
 
     private  int clubID;
     private  String clubName;
@@ -14,6 +14,13 @@ public class Club {
     private  LocalDate startDate;
     private  int clubAdvisorID;
     private  String clubBenefits;
+
+    public Club(int clubID, String clubName, String clubDescription, String clubBenefits) {
+        Club.clubID = clubID;
+        Club.clubName = clubName;
+        Club.clubDescription = clubDescription;
+        Club.clubBenefits = clubBenefits;
+    }
 
     public Club(int clubID, String clubName, String clubDescription, String clubMission, LocalDate startDate, Integer clubAdvisorID, String clubBenefits) {
         this.clubID = clubID;
