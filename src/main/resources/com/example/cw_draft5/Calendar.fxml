@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/EventSheduling.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.CalendarController">
     <children>
-        <TableView fx:id="eventTable" layoutX="6.0" layoutY="86.0" opacity="0.67" prefHeight="363.0" prefWidth="778.0" style="-fx-background-color: pink; -fx-border-color: #100128; -fx-border-width: 2;">
+        <TableView fx:id="eventTable" layoutX="6.0" layoutY="86.0" prefHeight="363.0" prefWidth="778.0" style="-fx-background-color: pink; -fx-border-color: #100128; -fx-border-width: 2;" stylesheets="@CSS/EventSheduling.css">
             <columns>
-                <TableColumn fx:id="clubID" prefWidth="62.0" styleClass="bor" text="Club ID" />
+                <TableColumn fx:id="clubID" prefWidth="62.0" style="backgroung-color: pink;" styleClass="bor" text="Club ID" />
                 <TableColumn fx:id="eventID" prefWidth="82.0" text="Event ID" />
                 <TableColumn fx:id="eventName" prefWidth="101.0" text="Event Name" />
                 <TableColumn fx:id="date" prefWidth="79.0" text="Event date" />
@@ -28,7 +28,7 @@
                 <Font name="Berlin Sans FB" size="40.0" />
             </font>
         </Text>
-      <Button fx:id="rechedule" layoutX="132.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#rescheduleClicked" prefHeight="34.0" prefWidth="110.0" style="-fx-background-color: #100128;" text="Update" textFill="#ffd1fa">
+      <Button fx:id="rechedule" layoutX="145.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#rescheduleClicked" prefHeight="34.0" prefWidth="110.0" style="-fx-background-color: #100128;" text="Update" textFill="#ffd1fa">
          <font>
             <Font name="Lucida Fax Regular" size="16.0" />
          </font>
@@ -36,7 +36,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="delete" layoutX="527.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#deleteClicked" prefHeight="34.0" prefWidth="110.0" style="-fx-background-color: #100128;" text="Delete" textFill="#ffd1fa">
+      <Button fx:id="delete" layoutX="530.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#deleteClicked" prefHeight="34.0" prefWidth="110.0" style="-fx-background-color: #100128;" text="Delete" textFill="#ffd1fa">
          <font>
             <Font name="Lucida Fax Regular" size="16.0" />
          </font>
