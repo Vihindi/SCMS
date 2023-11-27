@@ -11,7 +11,7 @@ public class AddEventIntoDatabase {
             // Obtain clubID based on the selected club name
             int clubID = getClubID(selectedClub);
 
-            String sql = "INSERT INTO eventscheduling (clubID, EventName, EventDate, EventCode, Mode, Venue, TimeSlot, Description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO eventscheduling (ClubID, EventName, EventDate, EventCode, Mode, Venue, TimeSlot, Description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, clubID);
                 statement.setString(2, event.getEventName());
@@ -42,13 +42,13 @@ public class AddEventIntoDatabase {
 
     private static int getClubID(String clubName) {
         try (Connection connection = DatabaseConnection.getConnection()) {
-            String query = "SELECT clubID FROM club WHERE Name = ?";
+            String query = "SELECT ClubID FROM club WHERE Name = ?";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setString(1, clubName);
 
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
-                        return resultSet.getInt("clubID");
+                        return resultSet.getInt("ClubID");
                     }
                 }
             }
