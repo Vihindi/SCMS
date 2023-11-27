@@ -1,24 +1,12 @@
 package com.example.cw_draft5;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.Objects;
+import java.time.LocalDate;
 
 public class EventSchedulingController {
-
-    @FXML
-    private TextField ClubID;
-
-    @FXML
-    private TextField EventID;
 
     @FXML
     private TextField EventName;
@@ -38,9 +26,11 @@ public class EventSchedulingController {
     @FXML
     private TextField Venue;
 
-
     @FXML
     private TextField TimeSlot;
+
+    @FXML
+    private ComboBox<String> ClubName;
 
     @FXML
     private Button submit;
@@ -48,32 +38,72 @@ public class EventSchedulingController {
     @FXML
     private ChoiceBox<String> myChoiceBox;
 
+    private AttendanceDatabase attendanceDatabase;
+
     @FXML
-    void viewCalendar(MouseEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Calendar.fxml")));
-        stage.setScene(new Scene(root, 789, 531));
+    void initialize() {
+        attendanceDatabase = new AttendanceDatabase();
+        populateClubNames();
+    }
+
+    private void populateClubNames() {
+        ClubName.setItems(attendanceDatabase.getClubNames());
     }
 
     @FXML
     void submitClicked(MouseEvent event) {
-        Event newEvent = new Event(
-                Integer.parseInt(ClubID.getText()),
-                Integer.parseInt(EventID.getText()),
-                EventName.getText(),
-                Date.getValue(),
-                EventCode.getText(),
-                Mode.getValue(),
-                Venue.getText(),
-                TimeSlot.getText(),
-                Description.getText()
-        );
+        // Retrieve values from UI components
+        String eventName = EventName.getText();
+        LocalDate eventDate = Date.getValue();
+        String eventCode = EventCode.getText();
+        String mode = Mode.getValue();
+        String venue = Venue.getText();
+        String timeSlot = TimeSlot.getText();
+        String description = Description.getText();
+        String selectedClub = ClubName.getValue();
 
-        AddEventIntoDatabase.addToDatabase(newEvent);
+        // Validate time slot format
+        if (!isValidTimeSlot(timeSlot)) {
+            // Show an error alert
+            showErrorAlert("Invalid Time Slot", "Time slot format should be in the form of HH:mmAM/PM-HH:mmAM/PM(8.00AM-10.00AM)");
+            return;
+        }
 
-        // Show a success message to the user
+        // Create an Event object
+        Event eventToAdd = new Event();
+
+        // Set properties of the Event object
+        eventToAdd.setEventName(eventName);
+        eventToAdd.setDate(eventDate);
+        eventToAdd.setEventCode(eventCode);
+        eventToAdd.setMode(mode);
+        eventToAdd.setVenue(venue);
+        eventToAdd.setTimeSlot(timeSlot);
+        eventToAdd.setDescription(description);
+
+        // Add the event to the database
+        AddEventIntoDatabase.addToDatabase(eventToAdd, selectedClub);
+
+        // Show a success alert
         showSuccessAlert();
     }
+
+    private boolean isValidTimeSlot(String timeSlot) {
+        // Regular expression for validating time slot format
+        String timeSlotRegex = "\\d{1,2}.\\d{2}[APMapm]{2}-\\d{1,2}.\\d{2}[APMapm]{2}";
+
+        // Check if the time slot matches the pattern
+        return timeSlot.matches(timeSlotRegex);
+    }
+
+    private void showErrorAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
 
     private void showSuccessAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -82,5 +112,5 @@ public class EventSchedulingController {
         alert.setContentText("Event created successfully!");
         alert.showAndWait();
     }
-
 }
+

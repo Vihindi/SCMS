@@ -8,7 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextInputDialog;
+
 import javafx.scene.Scene;
+
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -20,7 +24,13 @@ import java.util.Objects;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Optional;
 import java.util.Objects;
+
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -149,6 +159,7 @@ public class DashboardController implements Initializable {
         }
     }
 
+
     @FXML
     void Logout(MouseEvent event) {
 
@@ -198,6 +209,11 @@ public class DashboardController implements Initializable {
 
     @FXML
     void ReportClick(MouseEvent event) {
+        try {
+            loadPage("ClubActivityReport");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
