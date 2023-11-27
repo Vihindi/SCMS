@@ -51,8 +51,19 @@ public class ClubCreationController {
 
         // Show a success message to the user
         showSuccessAlert();
+        clearTextFields();
     }
-    
+
+    private void clearTextFields() {
+        clubID.clear();
+        clubName.clear();
+        clubDescription.clear();
+        clubMission.clear();
+        startDate.setValue(null);
+        clubAdvisorID.clear();
+        clubBenefits.clear();
+    }
+
     private void showSuccessAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");

@@ -39,6 +39,9 @@ public class LoginController extends DatabaseConnection {
     ResultSet rs;
 
 
+
+
+
     @FXML
     public void onClickCreateAccount(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainRegisterPage.fxml")));
@@ -48,9 +51,11 @@ public class LoginController extends DatabaseConnection {
         stage.show();
     }
 
+
+
     public void onClickLogin(ActionEvent event) throws IOException {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+         String username = usernameField.getText();
+         String password = passwordField.getText();
 
         if (username.equals("") && password.equals("")) {
             loginResult.setText("Please enter the username and password");
@@ -60,10 +65,10 @@ public class LoginController extends DatabaseConnection {
                 pst = DatabaseConnection.getConnection().prepareStatement("SELECT * FROM student WHERE Email=? and Password=?");
                 pst.setString(1, username);
                 pst.setString(2, password);
-
                 rs = pst.executeQuery();
 
                 if (rs.next()) {
+                    EventAttendanceController.username1 = username;
                     root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Dashboard.fxml")));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -78,6 +83,9 @@ public class LoginController extends DatabaseConnection {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+
+
         }
     }
+
 }

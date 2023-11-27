@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 
 public class AttendanceDatabase {
 
-    private static final String DATABASE_URL = "jdbc:MySQL://localhost:3306/SACMS";
+    private static final String DATABASE_URL = "jdbc:MySQL://localhost:3306/scams";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
 
@@ -61,7 +61,7 @@ public class AttendanceDatabase {
 
     public static void main(String[] args) {
         AttendanceDatabase AD = new AttendanceDatabase();
-        System.out.println(AD.getClubNames());
+       // System.out.println(AD.getClubNames());
     }
 
 }

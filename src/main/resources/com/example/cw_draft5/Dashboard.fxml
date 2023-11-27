@@ -152,7 +152,7 @@
             <Pane layoutX="273.0" layoutY="-49.0" prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: purple;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <HBox layoutX="359.0" layoutY="1.0" prefHeight="40.0" prefWidth="801.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                <children>
-                  <JFXButton prefHeight="44.0" prefWidth="150.0" text="Dashboard">
+                  <JFXButton onMouseClicked="#DashboardClick" prefHeight="44.0" prefWidth="150.0" text="Dashboard">
                      <font>
                         <Font size="15.0" />
                      </font>

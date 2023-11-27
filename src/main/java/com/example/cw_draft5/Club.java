@@ -1,16 +1,19 @@
 package com.example.cw_draft5;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Club extends DisplayClubs {
 
-    public static Integer clubID;
-    public static String clubName;
-    public static String clubDescription;
-    public static String clubMission;
-    public static LocalDate startDate;
-    public static Integer clubAdvisorID;
-    public static String clubBenefits;
+    private  int clubID;
+    private  String clubName;
+    private  String clubDescription;
+    private  String clubMission;
+    private  LocalDate startDate;
+    private  int clubAdvisorID;
+    private  String clubBenefits;
 
     public Club(int clubID, String clubName, String clubDescription, String clubBenefits) {
         Club.clubID = clubID;
@@ -20,59 +23,69 @@ public class Club extends DisplayClubs {
     }
 
     public Club(int clubID, String clubName, String clubDescription, String clubMission, LocalDate startDate, Integer clubAdvisorID, String clubBenefits) {
-        Club.clubID = clubID;
-        Club.clubName = clubName;
-        Club.clubDescription = clubDescription;
-        Club.clubMission = clubMission;
-        Club.startDate = startDate;
-        Club.clubAdvisorID = clubAdvisorID;
-        Club.clubBenefits = clubBenefits;
+        this.clubID = clubID;
+        this.clubName = clubName;
+        this.clubDescription = clubDescription;
+        this.clubMission = clubMission;
+        this.startDate = startDate;
+        this.clubAdvisorID = clubAdvisorID;
+        this.clubBenefits = clubBenefits;
     }
-    public static int getClubID(){
+
+
+    public int getClubID() {
         return clubID;
     }
 
-    public static String getClubName() {
+    public void setClubID(int clubID) {
+        this.clubID = clubID;
+    }
+
+    public  String getClubName() {
         return clubName;
     }
 
     public void setClubName(String clubName) {
-        Club.clubName = clubName;
+        this.clubName = clubName;
     }
 
-    public static String getClubDescription() {
+    public  String getClubDescription() {
         return clubDescription;
     }
 
     public void setClubDescription(String clubDescription) {
-        Club.clubDescription = clubDescription;
+        this.clubDescription = clubDescription;
     }
 
-    public static String getClubMission() {
+    public  String getClubMission() {
         return clubMission;
     }
 
     public void setClubMission(String clubMission) {
-        Club.clubMission = clubMission;
+        this.clubMission = clubMission;
     }
 
-    public static LocalDate getStartDate() {
+    public  LocalDate getStartDate() {
         return startDate;
     }
 
     public void setStartDate(LocalDate startDate) {
-        Club.startDate = startDate;
+        this.startDate = startDate;
     }
 
-    public static Integer getClubAdvisorID() {
+    public  int getClubAdvisorID() {
         return clubAdvisorID;
     }
 
-    public static String getClubBenefits() {
+    public void setClubAdvisorID(int clubAdvisorID) {
+        this.clubAdvisorID = clubAdvisorID;
+    }
+
+    public  String getClubBenefits() {
         return clubBenefits;
     }
 
     public void setClubBenefits(String clubBenefits) {
-        Club.clubBenefits = clubBenefits;
+        this.clubBenefits = clubBenefits;
     }
 }
