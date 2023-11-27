@@ -29,9 +29,7 @@ public class DisplayClubs {
         return clubDescriptionProperty;
     }
 
-    public StringProperty getClubBenefitsProperty() {
-
-        return clubBenefitsProperty;
+    public StringProperty getClubBenefitsProperty() { return clubBenefitsProperty;
     }
 
     public IntegerProperty getClubIDProperty() {
