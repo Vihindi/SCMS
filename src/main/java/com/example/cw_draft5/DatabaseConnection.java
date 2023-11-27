@@ -38,7 +38,7 @@ import java.sql.*;
 import java.time.LocalDate;
 
 public class DatabaseConnection {
-    static final String url = "jdbc:mysql://localhost:3306/scms";
+    static final String url = "jdbc:mysql://localhost:3306/SACMS";
     static final String user = "root";
     static final String password = "";
 

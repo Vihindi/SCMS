@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class AddEventIntoDatabase {
     public static void addToDatabase(Event event, String selectedClub) {
         try (Connection connection = DatabaseConnection.getConnection()) {
-            // Obtain clubID based on selected club name
+            // Obtain clubID based on the selected club name
             int clubID = getClubID(selectedClub);
 
             String sql = "INSERT INTO eventscheduling (clubID, EventName, EventDate, EventCode, Mode, Venue, TimeSlot, Description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -21,14 +21,24 @@ public class AddEventIntoDatabase {
                 statement.setString(6, event.getVenue());
                 statement.setString(7, event.getTimeSlot());
                 statement.setString(8, event.getDescription());
-                statement.executeUpdate();
+
+                int rowsAffected = statement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Event added to the database successfully.");
+                } else {
+                    System.out.println("Failed to add event to the database.");
+                }
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                throw new RuntimeException("Error executing SQL statement", e);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new RuntimeException("Error connecting to the database", e);
         }
     }
+
 
     private static int getClubID(String clubName) {
         try (Connection connection = DatabaseConnection.getConnection()) {

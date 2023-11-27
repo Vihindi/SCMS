@@ -53,8 +53,9 @@
         <ChoiceBox fx:id="Mode" layoutX="579.0" layoutY="142.0" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: fff; -fx-border-color: #100128; -fx-border-width: 2;">
             <items>
                 <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Physical" />
                     <String fx:value="Online" />
+                    <String fx:value="In-Person" />
+                    <String fx:value="Hybrid" />
                 </FXCollections>
             </items>
         </ChoiceBox>

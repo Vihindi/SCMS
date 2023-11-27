@@ -8,8 +8,6 @@ import java.time.LocalDate;
 
 public class EventSchedulingController {
 
-
-
     @FXML
     private TextField EventName;
 
@@ -58,24 +56,52 @@ public class EventSchedulingController {
         String eventName = EventName.getText();
         LocalDate eventDate = Date.getValue();
         String eventCode = EventCode.getText();
-        String mode = Mode.getValue(); // Assuming Mode is a ChoiceBox or similar
+        String mode = Mode.getValue();
         String venue = Venue.getText();
         String timeSlot = TimeSlot.getText();
         String description = Description.getText();
         String selectedClub = ClubName.getValue();
 
+        // Validate time slot format
+        if (!isValidTimeSlot(timeSlot)) {
+            // Show an error alert
+            showErrorAlert("Invalid Time Slot", "Time slot format should be in the form of HH:mmAM/PM-HH:mmAM/PM(8.00AM-10.00AM)");
+            return;
+        }
+
         // Create an Event object
         Event eventToAdd = new Event();
 
+        // Set properties of the Event object
+        eventToAdd.setEventName(eventName);
+        eventToAdd.setDate(eventDate);
+        eventToAdd.setEventCode(eventCode);
+        eventToAdd.setMode(mode);
+        eventToAdd.setVenue(venue);
+        eventToAdd.setTimeSlot(timeSlot);
+        eventToAdd.setDescription(description);
 
         // Add the event to the database
         AddEventIntoDatabase.addToDatabase(eventToAdd, selectedClub);
 
         // Show a success alert
         showSuccessAlert();
+    }
 
+    private boolean isValidTimeSlot(String timeSlot) {
+        // Regular expression for validating time slot format
+        String timeSlotRegex = "\\d{1,2}.\\d{2}[APMapm]{2}-\\d{1,2}.\\d{2}[APMapm]{2}";
 
+        // Check if the time slot matches the pattern
+        return timeSlot.matches(timeSlotRegex);
+    }
 
+    private void showErrorAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 
 

@@ -16,6 +16,9 @@ public class Event {
     private String Venue;
     private String TimeSlot;
 
+    // Composition: Event has a Club
+    private Club club;
+
     public Event() {
         this.ClubID=ClubID;
         this.EventID=EventID;
@@ -125,14 +128,13 @@ public class Event {
         TimeSlot = timeSlot;
     }
 
+    public Club getClub() {
+        return club;
+    }
 
-
-
-
-
-
-
-
-
+    public void setClub(Club club) {
+        this.club = club;
+        this.ClubID = club.getClubID(); // Assuming clubID is used to establish the composition relationship
+    }
 
 }
