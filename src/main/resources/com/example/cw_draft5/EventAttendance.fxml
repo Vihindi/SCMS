@@ -18,7 +18,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-        <ComboBox fx:id="clubComboBox" layoutX="417.0" layoutY="150.0" prefWidth="150.0" promptText="Select Club">
+        <ComboBox fx:id="clubComboBox" layoutX="417.0" layoutY="150.0" onAction="#clubComboBoxAction" prefWidth="150.0" promptText="Select Club">
             <!-- Add club items to the dropdown -->
             <items>
                 <FXCollections fx:factory="observableArrayList">
@@ -32,7 +32,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-        <ComboBox fx:id="eventComboBox" layoutX="415.0" layoutY="249.0" prefWidth="150.0" promptText="Select Event">
+        <ComboBox fx:id="eventComboBox" layoutX="415.0" layoutY="249.0" onAction="#eventComboBoxAction" prefWidth="150.0" promptText="Select Event">
             <!-- Add event items to the dropdown -->
             <items>
                 <FXCollections fx:factory="observableArrayList">
@@ -52,7 +52,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button fx:id="CustomBtn" layoutX="347.0" layoutY="436.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="158.0" text="Attend" textFill="WHITE">
+      <Button fx:id="CustomBtn" layoutX="347.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#AttendClick" prefHeight="43.0" prefWidth="158.0" text="Attend" textFill="WHITE">
          <stylesheets>
             <URL value="@CSS/EventAttendance.css" />
             <URL value="@CSS/ClubCreation.css" />

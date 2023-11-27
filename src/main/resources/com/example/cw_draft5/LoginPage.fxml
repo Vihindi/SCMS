@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@CSS/UserRegister.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.LoginController">
-    <Text fill="#580053" layoutX="501.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" AnchorPane.leftAnchor="501.0">
+    <Text fill="#580053" layoutX="501.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" AnchorPane.leftAnchor="470.0">
         <font>
             <Font name="Lucida Fax Demibold" size="14.0" />
         </font>
     </Text>
     <TextField fx:id="usernameField" layoutX="605.0" layoutY="209.0" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #580053; -fx-border-width: 2; -fx-background-color: fff;" AnchorPane.leftAnchor="605.0" />
-    <Text fill="#580053" layoutX="501.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" AnchorPane.leftAnchor="501.0">
+    <Text fill="#580053" layoutX="501.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" AnchorPane.leftAnchor="470.0">
         <font>
             <Font name="Lucida Fax Demibold" size="14.0" />
         </font>

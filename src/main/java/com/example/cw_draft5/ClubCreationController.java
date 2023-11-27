@@ -1,16 +1,13 @@
 package com.example.cw_draft5;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.Objects;
+import java.sql.*;
 
 public class ClubCreationController {
 
@@ -18,8 +15,61 @@ public class ClubCreationController {
     private Button CustomBtn;
 
     @FXML
-    void CreateClub(MouseEvent event) throws IOException {
+    private TextField clubID;
 
+    @FXML
+    private TextField clubAdvisorID;
+
+    @FXML
+    private TextField clubBenefits;
+
+    @FXML
+    private TextField clubDescription;
+
+    @FXML
+    private TextField clubMission;
+
+    @FXML
+    private TextField clubName;
+
+    @FXML
+    private DatePicker startDate;
+
+    @FXML
+    void CreateClub(MouseEvent event) throws ClassNotFoundException {
+        Club newClub = new Club(
+                Integer.parseInt(clubID.getText()),
+                clubName.getText(),
+                clubDescription.getText(),
+                clubMission.getText(),
+                startDate.getValue(),
+                Integer.parseInt(clubAdvisorID.getText()),
+                clubBenefits.getText()
+        );
+
+        ClubCreationDatabase.AddClubToDB(newClub);
+
+        // Show a success message to the user
+        showSuccessAlert();
+        clearTextFields();
+    }
+
+    private void clearTextFields() {
+        clubID.clear();
+        clubName.clear();
+        clubDescription.clear();
+        clubMission.clear();
+        startDate.setValue(null);
+        clubAdvisorID.clear();
+        clubBenefits.clear();
+    }
+
+    private void showSuccessAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText("Club created successfully!");
+        alert.showAndWait();
     }
 
 }
