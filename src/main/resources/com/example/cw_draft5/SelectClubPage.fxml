@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #ecb2dc;" styleClass="root" stylesheets="@CSS/UserRegister.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.SelectClub">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #ecb2dc;" styleClass="root" stylesheets="@CSS/UserRegister.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.SelectClubController">
     <children>
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
         <Text layoutX="405.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SELECT CLUB">

@@ -6,17 +6,17 @@ public class Student {
     private String studentID;
     private String fullName;
     private LocalDate dateOfBirth;
-    private int contactNo;
+    private String contactNo;
     private String gender;
     private String email;
     private String location;
-    private int grade;
+    private String grade;
     private String guardianName;
-    private int guardianContactNo;
+    private String guardianContactNo;
     private String skills;
     private String password;
 
-    public Student(String studentID, String fullName, LocalDate dateOfBirth, int contactNo, String gender, String email, String location, int grade, String guardianName, int guardianContactNo, String skills, String password) {
+    public Student(String studentID, String fullName, LocalDate dateOfBirth, String contactNo, String gender, String email, String location, String grade, String guardianName, String guardianContactNo, String skills, String password) {
         this.studentID = studentID;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
@@ -39,12 +39,12 @@ public class Student {
         return fullName;
     }
 
-    public String getDateOfBirth() {
-        return String.valueOf(dateOfBirth);
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
 
-    public int getContactNo() {
+    public String getContactNo() {
         return contactNo;
     }
 
@@ -63,7 +63,7 @@ public class Student {
     }
 
 
-    public int getGrade() {
+    public String getGrade() {
         return grade;
     }
 
@@ -73,7 +73,7 @@ public class Student {
     }
 
 
-    public int getGuardianContactNo() {
+    public String getGuardianContactNo() {
         return guardianContactNo;
     }
 
