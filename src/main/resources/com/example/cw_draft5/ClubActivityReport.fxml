@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/ClubCreation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.ClubActivityReportController">
+   <children>
+      <ComboBox fx:id="clubComboBox" layoutX="151.0" layoutY="33.0" prefHeight="25.0" prefWidth="275.0" promptText="Select Club">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Club A" />
+               <String fx:value="Club B" />
+               <String fx:value="Club C" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <TableView fx:id="ClubActivityReportTable" layoutX="47.0" layoutY="100.0" prefHeight="330.0" prefWidth="694.0">
+         <columns>
+            <TableColumn fx:id="EventIDColumn" prefWidth="68.0000228881836" text="Event ID" />
+            <TableColumn fx:id="EventNameColumn" prefWidth="92.79998016357422" text="Event Name" />
+            <TableColumn fx:id="EventDateColumn" prefWidth="78.4000244140625" text="Event Date" />
+            <TableColumn fx:id="EventCodeColumn" prefWidth="82.4000244140625" text="Event Code" />
+            <TableColumn fx:id="ModeColumn" prefWidth="68.7999267578125" text="Mode" />
+            <TableColumn fx:id="VenueColumn" prefWidth="75.0" text="Venue" />
+            <TableColumn fx:id="TImeSlotColumn" prefWidth="88.00006103515625" text="Time Slot" />
+            <TableColumn fx:id="DescriptionColumn" prefWidth="139.99993896484375" text="Description" />
+         </columns>
+      </TableView>
+      <ImageView fx:id="SearchBtn" fitHeight="40.0" fitWidth="39.0" layoutX="467.0" layoutY="27.0" onMouseClicked="#SearchBtn" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/Search.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

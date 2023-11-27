@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -14,9 +15,14 @@ import javafx.util.Pair;
 
 
 public class DatabaseConnection {
-    static final String url = "jdbc:mysql://localhost:3306/SACMS";
+    static final String url = "jdbc:mysql://localhost:3306/sacms";
     static final String user = "root";
     static final String password = "";
+    public Connection connection;
+    public DatabaseConnection() {
+        // Initialize the connection when the DatabaseConnection object is created
+        connection = getConnection();
+    }
 
 
     public static Connection getConnection() {
@@ -29,18 +35,19 @@ public class DatabaseConnection {
         }
     }
 
+
     public ObservableList<String> getEventNames(String selectedClub) {
         return common("SELECT e.eventName\n" +
                 "FROM eventscheduling e \n" +
                 "JOIN club c ON e.clubID = c.clubID\n" +
-                "WHERE c.Name = '"+selectedClub+"';","EventName");
+                "WHERE c.Name = '" + selectedClub + "';", "EventName");
     }
 
-    public Boolean getEventCode(String eventCode,String selectedEvent) {
-         ObservableList<String>EventName = common("SELECT EventName \n" +
+    public Boolean getEventCode(String eventCode, String selectedEvent) {
+        ObservableList<String> EventName = common("SELECT EventName \n" +
                 "FROM eventscheduling  \n" +
-                "WHERE  EventCode = '"+ eventCode+"';","EventName");
-         String eventName = EventName.get(0);
+                "WHERE  EventCode = '" + eventCode + "';", "EventName");
+        String eventName = EventName.get(0);
         System.out.println(EventName);
         ObservableList<String> eventCodeList = common("SELECT EventCode " +
                 "FROM eventscheduling " +
@@ -50,8 +57,7 @@ public class DatabaseConnection {
         String eventCode2 = eventCodeList.get(0);
 
 
-
-        if (!eventName.isEmpty() || !eventCode2.isEmpty() ){
+        if (!eventName.isEmpty() || !eventCode2.isEmpty()) {
             return Objects.equals(eventCode, eventCode2);
         }
         return false;
@@ -59,16 +65,16 @@ public class DatabaseConnection {
     }
 
     public ObservableList<String> getClubNames() {
-        return common("SELECT Name FROM club","Name");
+        return common("SELECT Name FROM club", "Name");
     }
 
-    public ObservableList<String> common(String query, String ColumnName){
+    public ObservableList<String> common(String query, String ColumnName) {
         ObservableList<String> List = FXCollections.observableArrayList();
-        try (Connection connection = DriverManager.getConnection(url,user,password)) {
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
             try (PreparedStatement statement = connection.prepareStatement(query);
                  ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    String  column= resultSet.getString(ColumnName);
+                    String column = resultSet.getString(ColumnName);
                     List.add(column);
                 }
             }
@@ -79,11 +85,12 @@ public class DatabaseConnection {
 
     }
 
-    public String ClubId(String selectedClub){
+    public String ClubId(String selectedClub) {
         ObservableList<String> ClubID = common("SELECT clubID FROM club WHERE Name = '" + selectedClub + "';", "clubID");
         return ClubID.get(0);
     }
-    public String EventId(String selectedEvent){
+
+    public String EventId(String selectedEvent) {
         ObservableList<String> EventID = common("SELECT EventID FROM eventscheduling WHERE EventName = '" + selectedEvent + "';", "EventID");
         return EventID.get(0);
     }
@@ -104,7 +111,7 @@ public class DatabaseConnection {
             }
         }
 
-        System.out.println(ClubId+" "+EventId);
+        System.out.println(ClubId + " " + EventId);
         System.out.println(studentIDQuery);
         System.out.println("Student Names: " + studentNameList);
 
@@ -149,5 +156,117 @@ public class DatabaseConnection {
         }
     }
 
+    public ObservableList<Event> getEventsForClub(int clubID) {
+        ObservableList<Event> events = FXCollections.observableArrayList();
+
+        try (Connection connection = getConnection()) {
+            String query = "SELECT * FROM eventscheduling WHERE clubID = ?";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setInt(1, clubID);
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        int eventId = resultSet.getInt("eventID");
+                        String eventName = resultSet.getString("eventName");
+                        LocalDate eventDate = resultSet.getDate("eventDate").toLocalDate();
+                        String eventCode = resultSet.getString("eventCode");
+                        String mode = resultSet.getString("mode");
+                        String venue = resultSet.getString("venue");
+                        String timeSlot = resultSet.getString("timeSlot");
+                        String description = resultSet.getString("description");
+
+                        Event event = new Event(clubID, eventId, eventName, eventDate, eventCode, mode, venue, timeSlot, description);
+                        events.add(event);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle database errors
+        }
+        return events;
+    }
+
+    int getClubID(String clubName) {
+        try (Connection connection = getConnection()) {
+            String query = "SELECT clubID FROM club WHERE Name = ?";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setString(1, clubName);
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getInt("clubID");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle database errors
+        }
+        return -1; // Return -1 if club ID is not found (handle this case appropriately in your application)
+    }
+
+    // DatabaseConnection class
+    public List<String> getClubNameForReport() {
+        List<String> clubNames = new ArrayList<>();
+        String query = "SELECT Name FROM club";  // Assuming the column name is "Name"
+
+        try (Connection connection = getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            while (resultSet.next()) {
+                clubNames.add(resultSet.getString("Name"));  // Use the correct column name
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return clubNames;
+    }
+
+
+
+    public List<Student> getStudentsByClub(String clubName) {
+        List<Student> students = new ArrayList<>();
+        String query = "SELECT s.* FROM student s " +
+                "JOIN student_club sc ON s.studentID = sc.studentID " +
+                "JOIN club c ON sc.clubID = c.clubID " +
+                "WHERE c.Name = ?";
+
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setString(1, clubName);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    // Create Student objects and add them to the list
+                    Student student = new Student(
+                            resultSet.getString("studentID"),
+                            resultSet.getString("FullName"),
+                            resultSet.getDate("DOB").toLocalDate(),
+                            resultSet.getString("Contact"),
+                            resultSet.getString("Gender"),
+                            resultSet.getString("Email"),
+                            resultSet.getString("Location"),
+                            resultSet.getString("Grade"),
+                            resultSet.getString("GuardianName"),
+                            resultSet.getInt("GuardianContact"),
+                            resultSet.getString("Skills"),
+                            resultSet.getString("Password"));
+                    students.add(student);
+
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return students;
+    }
 
 }
+
+
+

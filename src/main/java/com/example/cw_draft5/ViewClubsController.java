@@ -52,10 +52,6 @@ public class ViewClubsController {
         //populateTable();
     }
 
-    //private void populateTable() {
-    //ObservableList<Club> clubData = GetClubsFromDatabase();
-    //viewTable.setItems(clubData);
-    // }
 
     private void initializeTableColumns() {
         clubID.setCellValueFactory(new PropertyValueFactory<>("clubID"));

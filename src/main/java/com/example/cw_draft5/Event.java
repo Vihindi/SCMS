@@ -30,6 +30,9 @@ public class Event {
 
     }
 
+    public Event(String studentID, String fullName, LocalDate dob, String contact, String gender, String email, String location, int grade, String guardianName, String gurdianNo, String skills, String password) {
+    }
+
     public int getClubID() {
         return ClubID;
     }

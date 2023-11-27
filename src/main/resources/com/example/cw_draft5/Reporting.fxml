@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/ClubCreation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.ReportingController">
+   <children>
+      <Label layoutX="139.0" layoutY="202.0" text="Student Records ">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="502.0" layoutY="202.0" text="Club Admin Records">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="374.0" layoutY="320.0">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font></Label>
+      <ImageView fx:id="StudentBtn" fitHeight="115.0" fitWidth="138.0" layoutX="152.0" layoutY="75.0" onMouseClicked="#StudentRecords" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/Student%20records.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="adminBtn" fitHeight="115.0" fitWidth="115.0" layoutX="535.0" layoutY="75.0" onMouseClicked="#AdminRecords" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/Adminpanel.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="AttendenceBtn" fitHeight="115.0" fitWidth="115.0" layoutX="146.0" layoutY="263.0" onMouseClicked="#AttendenceSummary" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/Attendence.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ClubActivity" fitHeight="97.0" fitWidth="103.0" layoutX="544.0" layoutY="283.0" onMouseClicked="#ClubActivitySummary" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Asserts/Eventplan.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="120.0" layoutY="400.0" text="Attendence Summary">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="501.0" layoutY="400.0" text="Club Activity Summary">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,5 +1,5 @@
 .root{
-    -fx-background-image: url('../Asserts/HomeBackground.jpg');
+    -fx-background-image: url('../Asserts/Background.jpg');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
 }
