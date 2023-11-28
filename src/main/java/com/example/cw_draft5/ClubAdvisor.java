@@ -8,19 +8,39 @@ public class ClubAdvisor {
     private String gender;
     private String password;
 
-    public ClubAdvisor(int clubAdvisorID,String clubAdvisorName, String email, String contactNo, String gender, String password) {
-        this.clubAdvisorID = clubAdvisorID;
+    public ClubAdvisor(){
+
+    }
+
+    public ClubAdvisor(String clubAdvisorName, String email, String contactNo, String gender, String password) {
         this.clubAdvisorName = clubAdvisorName;
         this.email = email;
         this.contactNo = contactNo;
         this.gender = gender;
         this.password = password;
     }
-    public ClubAdvisor(String clubAdvisorName, String email, String contactNo, String gender, String password) {
+
+    public int getClubAdvisorID() {
+        return clubAdvisorID;
+    }
+
+    public void setClubAdvisorID(int clubAdvisorID) {
+        this.clubAdvisorID = clubAdvisorID;
+    }
+
+    public void setClubAdvisorName(String clubAdvisorName) {
         this.clubAdvisorName = clubAdvisorName;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setContactNo(String contactNo) {
         this.contactNo = contactNo;
-        this.gender = gender;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -46,13 +66,5 @@ public class ClubAdvisor {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public int getClubAdvisorID() {
-        return clubAdvisorID;
-    }
-
-    public void setClubAdvisorID(int clubAdvisorID) {
-        this.clubAdvisorID = clubAdvisorID;
     }
 }
