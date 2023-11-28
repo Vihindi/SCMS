@@ -30,6 +30,11 @@ public class Student {
         this.skills = skills;
         this.password = password;
     }
+    public Student(String studentID, String fullName) {
+        this.studentID = studentID;
+        this.fullName = fullName;
+    }
+
 
     public String getStudentID() {
         return studentID;

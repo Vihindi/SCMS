@@ -51,7 +51,7 @@ public class UserRegistrationQueries extends DatabaseConnection{
                             resultSet.getString("Location"),
                             resultSet.getString("Grade"),
                             resultSet.getString("GuardianName"),
-                            resultSet.getInt("GuardianContact"),
+                            resultSet.getString("GuardianContact"),
                             resultSet.getString("Skills"),
                             resultSet.getString("Password"));
                     students.add(student);

@@ -16,10 +16,10 @@ public class Club extends DisplayClubs {
     private  String clubBenefits;
 
     public Club(int clubID, String clubName, String clubDescription, String clubBenefits) {
-        Club.clubID = clubID;
-        Club.clubName = clubName;
-        Club.clubDescription = clubDescription;
-        Club.clubBenefits = clubBenefits;
+        this.clubID = clubID;
+        this.clubName = clubName;
+        this.clubDescription = clubDescription;
+        this.clubBenefits = clubBenefits;
     }
 
     public Club(int clubID, String clubName, String clubDescription, String clubMission, LocalDate startDate, Integer clubAdvisorID, String clubBenefits) {

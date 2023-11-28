@@ -16,6 +16,13 @@ public class ClubAdvisor {
         this.gender = gender;
         this.password = password;
     }
+    public ClubAdvisor(String clubAdvisorName, String email, String contactNo, String gender, String password) {
+        this.clubAdvisorName = clubAdvisorName;
+        this.email = email;
+        this.contactNo = contactNo;
+        this.gender = gender;
+        this.password = password;
+    }
 
     public String getClubAdvisorName() {
         return clubAdvisorName;

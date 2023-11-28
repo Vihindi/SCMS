@@ -49,14 +49,14 @@ public class ClubActivityReportController {
 
     @FXML
     private ImageView SearchBtn;
+    private ClubActivityQueries clubActivityQueries;
 
-    private AttendanceDatabase attendanceDatabase;
-
-    private DatabaseConnection databaseConnection;
+    private AttendanceQuaries attendanceQuaries;
 
     @FXML
     void initialize() {
-        databaseConnection = new DatabaseConnection();
+        attendanceQuaries = new AttendanceQuaries();
+        clubActivityQueries = new ClubActivityQueries();
         populateClubComboBox();
         initializeTableColumns();
     }
@@ -73,7 +73,7 @@ public class ClubActivityReportController {
     }
 
     private void populateClubComboBox() {
-        List<String> clubNames = databaseConnection.getClubNames();
+        List<String> clubNames = attendanceQuaries.getClubNames();
         ObservableList<String> clubNamesObservable = FXCollections.observableArrayList(clubNames);
         clubComboBox.setItems(clubNamesObservable);
     }
@@ -87,7 +87,7 @@ public class ClubActivityReportController {
         // Use the clubID to filter events relevant to the selected club
 
         // Example: Fetch events using a method in DatabaseConnection
-        ObservableList<Event> events = databaseConnection.getEventsForClub(clubID);
+        ObservableList<Event> events = clubActivityQueries.getEventsForClub(clubID);
 
         // Update the TableView with the new list of events
         ClubActivityReportTable.setItems(events);
@@ -105,7 +105,7 @@ public class ClubActivityReportController {
 
     public void SearchBtn(javafx.scene.input.MouseEvent mouseEvent) {
         String selectedClub = selectedClub();
-        int clubID = databaseConnection.getClubID(selectedClub);
+        int clubID = clubActivityQueries.getClubID(selectedClub);
 
         // Fetch and display events for the selected club
         fetchAndDisplayEvents(clubID);
