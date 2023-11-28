@@ -6,10 +6,10 @@
 
 }
 #textId {
-    -fx-font-family: 'Raleway';
+    -fx-font-family: 'Comic Sans MS';
     -fx-font-size: 32px;
     -fx-font-weight: bold;
-    -fx-text-fill: #3498db;
+    -fx-text-fill: #000000;
     -fx-effect: dropshadow(three-pass-box, #3498db, 10, 0, 0, 0);
     -fx-transition: color 0.3s ease;
 }

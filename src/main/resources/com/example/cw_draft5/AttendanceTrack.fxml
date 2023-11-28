@@ -4,6 +4,7 @@
 <?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,7 +23,7 @@
           <TableColumn fx:id="NameColumn" prefWidth="373.3333740234375" text="Name" />
         </columns>
       </TableView>
-      <Text fx:id="textId" layoutX="249.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance List" wrappingWidth="242.8033447265625">
+      <Text fx:id="textId" layoutX="254.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance List" wrappingWidth="308.13665771484375">
          <font>
             <Font size="20.0" />
          </font>
@@ -53,5 +54,10 @@
             </ComboBox>
          </children>
       </HBox>
+      <Label fx:id="sumOfAttendance" layoutX="81.0" layoutY="425.0" prefHeight="17.0" prefWidth="24.0" visible="false">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

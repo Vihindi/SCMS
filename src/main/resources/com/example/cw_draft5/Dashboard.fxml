@@ -66,7 +66,7 @@
          </children></AnchorPane>
    </center>
    <left>
-      <VBox fx:id="slider" prefHeight="577.0" prefWidth="200.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
+      <VBox fx:id="slider" prefHeight="577.0" prefWidth="200.0" style="-fx-background-color: #100128;" BorderPane.alignment="CENTER">
          <children>
             <JFXButton onMouseClicked="#clubAdmin" prefHeight="47.0" prefWidth="209.0" text="ClubOps" textFill="WHITE">
                <font>
@@ -149,7 +149,7 @@
    <top>
       <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: White;" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="273.0" layoutY="-49.0" prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: purple;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane layoutX="273.0" layoutY="-49.0" prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #0093af;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <HBox layoutX="359.0" layoutY="1.0" prefHeight="40.0" prefWidth="801.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                <children>
                   <JFXButton onMouseClicked="#DashboardClick" prefHeight="44.0" prefWidth="150.0" text="Dashboard">
@@ -172,7 +172,7 @@
                         <Font size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="490.0" layoutY="10.0" prefHeight="41.0" prefWidth="140.0" text="Report">
+                  <JFXButton layoutX="490.0" layoutY="10.0" onMouseClicked="#AttendanceReportClick" prefHeight="41.0" prefWidth="163.0" text="Attendance Report">
                      <font>
                         <Font size="15.0" />
                      </font>
