@@ -45,7 +45,7 @@ public class UserRegistrationQueries extends DatabaseConnection{
                             resultSet.getString("studentID"),
                             resultSet.getString("FullName"),
                             resultSet.getDate("DOB").toLocalDate(),
-                            resultSet.getString("Contact"),
+                            resultSet.getString("ContactNo"),
                             resultSet.getString("Gender"),
                             resultSet.getString("Email"),
                             resultSet.getString("Location"),

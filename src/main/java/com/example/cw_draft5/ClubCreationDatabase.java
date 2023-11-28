@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ClubCreationDatabase {
     public static void AddClubToDB(Club club) {
         try (Connection connection = DatabaseConnection.getConnection()) {
-            String sql = "INSERT INTO clubs (ClubID, Name, Description, Mission, Created_date, clubAdvisorID, Benefits) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO club (ClubID, Name, Description, Mission, Created_date, clubAdvisorID, Benefits) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, club.getClubID());
                 statement.setString(2, club.getClubName());

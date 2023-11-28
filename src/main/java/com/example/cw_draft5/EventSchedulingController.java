@@ -38,18 +38,20 @@ public class EventSchedulingController {
     @FXML
     private ChoiceBox<String> myChoiceBox;
 
+    private AttendanceQuaries attendanceQuaries;
 
 
-    private AttendanceDatabase attendanceDatabase;
+
+
 
     @FXML
     void initialize() {
-        attendanceDatabase = new AttendanceDatabase();
+        attendanceQuaries = new AttendanceQuaries();
         populateClubNames();
     }
 
     private void populateClubNames() {
-        ClubName.setItems(attendanceDatabase.getClubNames());
+        ClubName.setItems(attendanceQuaries.getClubNames());
     }
 
     @FXML
@@ -115,4 +117,3 @@ public class EventSchedulingController {
         alert.showAndWait();
     }
 }
-

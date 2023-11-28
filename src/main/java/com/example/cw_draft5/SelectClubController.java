@@ -50,7 +50,7 @@ public class SelectClubController extends StudentRegisterController implements I
     PreparedStatement pst;
     Connection conn = DatabaseConnection.getConnection();
 
-
+    Student student = new Student();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeColumns();
@@ -153,5 +153,4 @@ public class SelectClubController extends StudentRegisterController implements I
         }
     }
 }
-
 

@@ -202,6 +202,11 @@ public class DashboardController implements Initializable {
 
     @FXML
     void ReportClick(MouseEvent event) {
+        try {
+            loadPage("EventRegistration");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -222,6 +227,39 @@ public class DashboardController implements Initializable {
             ClubAdvisorProfileController profileController = loader.getController();
             profileController.setClubAdvisor(clubAdvisor);
             bp.setCenter(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void StudentReport(MouseEvent mouseEvent) {
+        try {
+            loadPage("StudentReport");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void ClubAdminReport(MouseEvent mouseEvent) {
+        try {
+            loadPage("ClubAdvisorReport");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public void ClubActivityReport(MouseEvent mouseEvent) {
+        try {
+            loadPage("ClubActivityReport");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void AttendanceReportClick(MouseEvent mouseEvent) {
+        try {
+            loadPage("AttendenceReport");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

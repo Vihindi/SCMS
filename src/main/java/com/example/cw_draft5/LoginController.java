@@ -51,6 +51,7 @@ public class LoginController extends DatabaseConnection {
     public void onClickLogin(ActionEvent event) throws IOException {
          String username = usernameField.getText();
          String password = passwordField.getText();
+        EventAttendanceController.username1 = username;
 
         if (username.equals("") && password.equals("")) {
             loginResult.setText("Please enter the username and password");
