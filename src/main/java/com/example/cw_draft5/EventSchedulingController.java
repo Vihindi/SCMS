@@ -38,6 +38,8 @@ public class EventSchedulingController {
     @FXML
     private ChoiceBox<String> myChoiceBox;
 
+
+
     private AttendanceDatabase attendanceDatabase;
 
     @FXML
