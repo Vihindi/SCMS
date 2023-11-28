@@ -1,13 +1,15 @@
 package com.example.cw_draft5;
 
 public class ClubAdvisor {
+    private int clubAdvisorID;
     private String clubAdvisorName;
     private String email;
     private String contactNo;
     private String gender;
     private String password;
 
-    public ClubAdvisor(String clubAdvisorName, String email, String contactNo, String gender, String password) {
+    public ClubAdvisor(int clubAdvisorID,String clubAdvisorName, String email, String contactNo, String gender, String password) {
+        this.clubAdvisorID = clubAdvisorID;
         this.clubAdvisorName = clubAdvisorName;
         this.email = email;
         this.contactNo = contactNo;
@@ -37,5 +39,13 @@ public class ClubAdvisor {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getClubAdvisorID() {
+        return clubAdvisorID;
+    }
+
+    public void setClubAdvisorID(int clubAdvisorID) {
+        this.clubAdvisorID = clubAdvisorID;
     }
 }

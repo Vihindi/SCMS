@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,9 +16,14 @@ import javafx.util.Pair;
 
 
 public class DatabaseConnection {
-    static final String url = "jdbc:mysql://localhost:3306/SACMS";
+    static final String url = "jdbc:mysql://localhost:3306/sacms";
     static final String user = "root";
     static final String password = "";
+    public Connection connection;
+    public DatabaseConnection() {
+        // Initialize the connection when the DatabaseConnection object is created
+        connection = getConnection();
+    }
 
 
     public static Connection getConnection() {
@@ -30,7 +36,7 @@ public class DatabaseConnection {
         }
     }
 
-
-
-
 }
+
+
+

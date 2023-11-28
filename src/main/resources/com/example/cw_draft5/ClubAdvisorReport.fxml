@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/ClubCreation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.ClubAdvisorReportController">
+   <children>
+      <TableView fx:id="ClubAdvisorReportTable" layoutX="87.0" layoutY="76.0" prefHeight="379.0" prefWidth="638.0">
+        <columns>
+          <TableColumn fx:id="ClubAdvisorID" prefWidth="109.59996032714844" text="Club Advisor ID" />
+          <TableColumn fx:id="FullName" prefWidth="145.5999755859375" text="Full name" />
+            <TableColumn fx:id="Email" prefWidth="151.20001220703125" text="Email" />
+            <TableColumn fx:id="ContactNo" prefWidth="129.59994506835938" text="Contact No" />
+            <TableColumn fx:id="Gender" prefWidth="102.4000244140625" text="Gender" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

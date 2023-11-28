@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/ClubCreation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.StudentReportController">
+    <children>
+        <TableView fx:id="StudentTable" layoutX="16.0" layoutY="169.0" prefHeight="252.0" prefWidth="754.0" style="-fx-border-color: #87CEEB;">
+            <columns>
+                <TableColumn fx:id="StudentID" prefWidth="53.60000991821289" text="ID" />
+                <TableColumn fx:id="FullName" prefWidth="73.60003662109375" text="Full Name" />
+                <TableColumn fx:id="DOB" prefWidth="60.79998779296875" text="DOB" />
+                <TableColumn fx:id="Contact" prefWidth="67.99992370605469" text="Contact" />
+                <TableColumn fx:id="Gender" prefWidth="65.60003662109375" text="Gender" />
+                <TableColumn fx:id="Email" prefWidth="68.800048828125" text="Email" />
+                <TableColumn fx:id="Location" prefWidth="56.79998779296875" text="Location" />
+                <TableColumn fx:id="Grade" prefWidth="46.4000244140625" text="Grade" />
+                <TableColumn fx:id="GuardianName" prefWidth="85.5999755859375" text="Guardian name" />
+                <TableColumn fx:id="GuardianContact" prefWidth="84.79998779296875" text="Guardian No" />
+            <TableColumn fx:id="Skills" prefWidth="84.00003662109373" text="Skills" />
+            </columns>
+        </TableView>
+        <ComboBox fx:id="ClubDropDown" layoutX="210.0" layoutY="71.0" prefHeight="25.0" prefWidth="275.0" promptText="Select Club">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Club A" />
+                    <String fx:value="Club B" />
+                    <String fx:value="Club C" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <ImageView fx:id="SearchingBtn" fitHeight="44.0" fitWidth="34.0" layoutX="516.0" layoutY="67.0" onMouseClicked="#SearchBtn" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Asserts/Search.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
