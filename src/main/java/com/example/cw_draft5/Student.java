@@ -3,7 +3,6 @@ package com.example.cw_draft5;
 import java.time.LocalDate;
 
 public class Student {
-    private int clubID;
     private String studentID;
     private String fullName;
     private LocalDate dateOfBirth;
@@ -13,11 +12,11 @@ public class Student {
     private String location;
     private String grade;
     private String guardianName;
-    private int guardianContactNo;
+    private String guardianContactNo;
     private String skills;
     private String password;
 
-    public Student( String studentID, String fullName, LocalDate dateOfBirth, String contactNo, String gender, String email, String location, String grade, String guardianName, int guardianContactNo, String skills, String password) {
+    public Student(String studentID, String fullName, LocalDate dateOfBirth, String contactNo, String gender, String email, String location, String grade, String guardianName, String guardianContactNo, String skills, String password) {
         this.studentID = studentID;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
@@ -31,10 +30,6 @@ public class Student {
         this.skills = skills;
         this.password = password;
     }
-
-    public Student(String studentID, String studentName) {
-    }
-
 
     public String getStudentID() {
         return studentID;
@@ -78,7 +73,7 @@ public class Student {
     }
 
 
-    public int getGuardianContactNo() {
+    public String getGuardianContactNo() {
         return guardianContactNo;
     }
 
@@ -91,5 +86,4 @@ public class Student {
     public String getPassword() {
         return password;
     }
-
 }

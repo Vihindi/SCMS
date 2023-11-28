@@ -26,7 +26,7 @@ public class EventAttendanceController {
     @FXML
     private Text textId;
 
-    private DatabaseConnection databaseConnection;
+    private AttendanceQuaries attendanceQuaries;
 
 
 
@@ -36,13 +36,13 @@ public class EventAttendanceController {
 
     @FXML
     void initialize() {
-        databaseConnection = new DatabaseConnection();
+        attendanceQuaries = new AttendanceQuaries();
         populateClubComboBox();
 
     }
 
     private void populateClubComboBox() {
-        clubComboBox.setItems(databaseConnection.getClubNames());
+        clubComboBox.setItems(attendanceQuaries.getClubNames());
     }
 
     @FXML
@@ -50,10 +50,16 @@ public class EventAttendanceController {
         String club = clubComboBox.getValue();
         String eventCode = eventCodeTextField.getText();
         String selectedEvent = eventComboBox.getValue();
-        Boolean EventCode =databaseConnection.getEventCode(eventCode,selectedEvent);
-        System.out.println(EventCode);
-        System.out.println("Hii" + username1);
-        databaseConnection.MarkAttendance(username1,club,selectedEvent);
+
+        if (selectedEvent != null) {
+            Boolean EventCode = attendanceQuaries.getEventCode(eventCode, selectedEvent);
+            System.out.println(EventCode);
+            System.out.println("Hii" + username1);
+            attendanceQuaries.MarkAttendance(username1, club, selectedEvent);
+        } else {
+            // Handle the case where no event is selected
+            System.out.println("Please select an event");
+        }
 
     }
 
@@ -62,7 +68,7 @@ public class EventAttendanceController {
     @FXML
     void clubComboBoxAction(ActionEvent event) {
         String selectedClub = clubComboBox.getValue();
-        eventComboBox.setItems(databaseConnection.getEventNames(selectedClub));
+        eventComboBox.setItems(attendanceQuaries.getEventNames(selectedClub));
     }
 
     @FXML

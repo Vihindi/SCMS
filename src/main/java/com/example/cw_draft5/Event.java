@@ -1,11 +1,10 @@
 package com.example.cw_draft5;
 
-import javafx.scene.control.DatePicker;
-
-import java.sql.Time;
 import java.time.LocalDate;
 
 public class Event {
+    private String ClubName;
+
     private int ClubID;
     private int EventID;
     private String EventName;
@@ -17,11 +16,13 @@ public class Event {
     private String Venue;
     private String TimeSlot;
 
-    public Event(int ClubID, int EventID, String EventName, LocalDate Date, String EventCode, String Mode, String Venue, String TimeSlot, String Description) {
+
+
+    public Event() {
         this.ClubID=ClubID;
         this.EventID=EventID;
         this.EventName = EventName;
-        this.Date = Date;
+        this.Date = (Date != null) ? Date : LocalDate.now();
         this.EventCode = EventCode;
         this.Mode = Mode;
         this.Venue = Venue;
@@ -30,7 +31,26 @@ public class Event {
 
     }
 
-    public Event(String studentID, String fullName, LocalDate dob, String contact, String gender, String email, String location, int grade, String guardianName, String gurdianNo, String skills, String password) {
+    public Event(int clubID, int eventID, String eventName, LocalDate date, String eventCode, String mode, String venue, String timeSlot, String description) {
+        this.ClubID = clubID;
+        this.EventID = eventID;
+        this.EventName = eventName;
+        this.Date = (Date != null) ? Date : LocalDate.now();
+        this.EventCode = eventCode;
+        this.Mode = mode;
+        this.Venue = venue;
+        this.TimeSlot = timeSlot;
+        this.Description = description;
+    }
+
+
+
+    public String getClubName() {
+        return ClubName;
+    }
+
+    public void setClubName(String clubName) {
+        ClubName = clubName;
     }
 
     public int getClubID() {
@@ -45,6 +65,7 @@ public class Event {
     public int getEventID() {
         return EventID;
     }
+
 
     public void setEventID(int eventID) {
         EventID = eventID;
@@ -105,4 +126,6 @@ public class Event {
     public void setTimeSlot(String timeSlot) {
         TimeSlot = timeSlot;
     }
+
+
 }

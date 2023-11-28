@@ -196,6 +196,13 @@ public class DashboardController implements Initializable {
 
     @FXML
     void ReportClick(MouseEvent event) {
+        try {
+            loadPage("EventRegistration");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     @FXML
@@ -208,6 +215,7 @@ public class DashboardController implements Initializable {
 
 
     }
+
 
 
     public void StudentReport(MouseEvent mouseEvent) {
