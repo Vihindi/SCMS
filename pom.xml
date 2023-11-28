@@ -52,6 +52,11 @@
           <artifactId>javafx-controls</artifactId>
           <version>21-ea+24</version>
       </dependency>
+      <dependency>
+          <groupId>org.apache.xbean</groupId>
+          <artifactId>xbean-reflect</artifactId>
+          <version>3.7</version>
+      </dependency>
   </dependencies>
 
   <build>

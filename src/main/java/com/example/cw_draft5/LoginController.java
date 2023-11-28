@@ -35,7 +35,6 @@ public class LoginController extends DatabaseConnection {
     private Scene scene;
     @FXML
     private Parent root;
-    Connection con;
     PreparedStatement pst;
     ResultSet rs;
 
@@ -63,7 +62,7 @@ public class LoginController extends DatabaseConnection {
 
         } else {
             try {
-                pst = DatabaseConnection.getConnection().prepareStatement("SELECT * FROM student WHERE email=? and Password=?");
+                pst = DatabaseConnection.getConnection().prepareStatement("SELECT * FROM student WHERE Email=? and Password=?");
                 pst.setString(1, username);
                 pst.setString(2, password);
                 rs = pst.executeQuery();
@@ -76,7 +75,7 @@ public class LoginController extends DatabaseConnection {
                     stage.setScene(scene);
                     stage.show();
                 } else {
-                    loginResult.setText("Entered incorrect username or password");
+                    loginResult.setText("Entered incorrect email or password");
                     usernameField.setText("");
                     passwordField.setText("");
                 }
@@ -90,23 +89,3 @@ public class LoginController extends DatabaseConnection {
     }
 
 }
-//package com.example.cw_draft5;
-//        import java.sql.Connection;
-//        import java.sql.DriverManager;
-//
-//public class DatabaseConnection {
-//    static final String url = "jdbc:mysql://localhost:3306/scms";
-//    static final String user = "root";
-//    static final String password = "";
-//
-//
-//    public static Connection getConnection() {
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            System.out.println("Connecting to the database...");
-//            return DriverManager.getConnection(url, user, password);
-//        } catch (Exception e) {
-//            throw new RuntimeException("Error connecting to the database", e);
-//        }
-//    }
-//}
