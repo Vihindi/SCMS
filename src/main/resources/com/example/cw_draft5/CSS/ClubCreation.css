@@ -17,3 +17,18 @@
     -fx-border-radius: 15px;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 5);
 }
+
+#CustomBtn1 {
+    /* Add your custom and creative styles here */
+    -fx-background-color: rgba(40, 105, 148, 0.75);
+    -fx-background-radius: 25px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 20px;
+    -fx-cursor: pointer;
+    -fx-border-color: #42e7d3;
+    -fx-border-width: 3px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}

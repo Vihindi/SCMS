@@ -6,7 +6,7 @@
 
 }
 
-#submit {
+#RegisterBtn {
     -fx-background-color: rgba(40, 105, 148, 0.75);
     -fx-background-radius: 25px;
     -fx-text-fill: white;
@@ -29,5 +29,28 @@
     -fx-background-radius: 0;
 
    
+}
+
+.table-view{
+    fx-padding: 0px;
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom right,#9e20a0,#5a3375);
+    -fx-border-radius:8px ;
+    -fx-border-width: 2px;
+}
+
+.table-view .column-header{
+    -fx-alignment: CENTER;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom right,#9e20a0,#5a3375);
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-background-insets: 0 0 0 0;
+}
+
+.table-view .column-header .filter{
+    -fx-background-color: transparent;
+    -fx-cell-size: 200px;
 }
 

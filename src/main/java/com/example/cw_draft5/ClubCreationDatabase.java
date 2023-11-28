@@ -9,13 +9,13 @@ public class ClubCreationDatabase {
         try (Connection connection = DatabaseConnection.getConnection()) {
             String sql = "INSERT INTO club (ClubID, Name, Description, Mission, Created_date, clubAdvisorID, Benefits) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setInt(1, Club.getClubID());
-                statement.setString(2, Club.getClubName());
-                statement.setString(3, Club.getClubDescription());
-                statement.setString(4, Club.getClubMission());
-                statement.setDate(5, java.sql.Date.valueOf(Club.getStartDate()));
-                statement.setInt(6, Club.getClubAdvisorID());
-                statement.setString(7, Club.getClubBenefits());
+                statement.setInt(1, club.getClubID());
+                statement.setString(2, club.getClubName());
+                statement.setString(3, club.getClubDescription());
+                statement.setString(4, club.getClubMission());
+                statement.setDate(5, java.sql.Date.valueOf(club.getStartDate()));
+                statement.setInt(6, club.getClubAdvisorID());
+                statement.setString(7, club.getClubBenefits());
                 statement.executeUpdate();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
