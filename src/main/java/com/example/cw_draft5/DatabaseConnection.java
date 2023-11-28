@@ -2,15 +2,10 @@ package com.example.cw_draft5;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import javafx.util.Pair;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-
-import javafx.util.Pair;
 
 
 public class DatabaseConnection {

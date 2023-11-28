@@ -36,8 +36,10 @@ public class ClubAdvisorRegisterController {
     @FXML
     public PasswordField clubAdvisorPassword;
 
+
     PreparedStatement pst;
-    ClubAdvisor clubAdvisor;
+    static ClubAdvisor clubAdvisor;
+    static String clubAdvisorEmailAddress;
 
 
     private void displayErrorMessage(String error) {
@@ -158,4 +160,19 @@ public class ClubAdvisorRegisterController {
         return true;
     }
 
+    public void onClickExistAccount(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LoginPage.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onClickCreateAccount(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainRegisterPage.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

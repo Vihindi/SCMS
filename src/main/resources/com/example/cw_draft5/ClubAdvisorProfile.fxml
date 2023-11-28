@@ -4,8 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,62 +13,48 @@
 
 <AnchorPane prefHeight="531.0" prefWidth="789.0" style="-fx-background-color: #ecb2dc;" stylesheets="@CSS/Home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.ClubAdvisorProfileController">
     <children>
-        <ImageView fitHeight="152.0" fitWidth="159.0" layoutX="319.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@Asserts/profile.png" />
-            </image>
-        </ImageView>
-        <TabPane layoutX="99.0" layoutY="214.0" prefHeight="286.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0">
+        <TabPane layoutX="99.0" layoutY="75.0" prefHeight="425.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0">
             <tabs>
                 <Tab text="Profile">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="802.0" style="-fx-background-color: #ffffff;">
                             <children>
-                                <Text layoutX="70.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" AnchorPane.leftAnchor="69.0">
+                          <ImageView fitHeight="107.0" fitWidth="97.0" layoutX="255.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@Asserts/profile.png" />
+                              </image>
+                          </ImageView>
+                                <Text layoutX="56.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" AnchorPane.leftAnchor="70.0">
                                     <font>
                                         <Font name="Lucida Fax Regular" size="14.0" />
                                     </font>
                                 </Text>
-                                <Text layoutX="69.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" AnchorPane.leftAnchor="69.0">
+                                <Text layoutX="56.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" AnchorPane.leftAnchor="70.0">
                                     <font>
                                         <Font name="Lucida Fax Regular" size="14.0" />
                                     </font>
                                 </Text>
-                                <Text layoutX="67.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" AnchorPane.leftAnchor="69.0">
+                                <Text layoutX="53.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." AnchorPane.leftAnchor="70.0">
                                     <font>
                                         <Font name="Lucida Fax Regular" size="14.0" />
                                     </font>
                                 </Text>
-                                <Text layoutX="68.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." AnchorPane.leftAnchor="69.0">
-                                    <font>
-                                        <Font name="Lucida Fax Regular" size="14.0" />
-                                    </font>
-                                </Text>
-                                <Label layoutX="204.0" layoutY="53.0" text="Ms. Sulari" />
-                                <TextField layoutX="207.0" layoutY="98.0" prefHeight="30.0" prefWidth="170.0" style="-fx-border-width: 2;" AnchorPane.leftAnchor="207.0" />
-                                <TextField layoutX="207.0" layoutY="148.0" prefHeight="30.0" prefWidth="170.0" style="-fx-border-width: 2;" AnchorPane.leftAnchor="207.0" />
-                                <TextField layoutX="207.0" layoutY="200.0" prefHeight="30.0" prefWidth="170.0" style="-fx-border-width: 2;" AnchorPane.leftAnchor="207.0" />
-                                <Button layoutX="478.0" layoutY="110.0" mnemonicParsing="false" text="Save Changes" />
-                            </children>
-                        </AnchorPane>
-                    </content>
-                </Tab>
-                <Tab text="Clubs">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="290.0" prefWidth="637.0" style="-fx-background-color: #ffffff;">
-                            <children>
-                                <TableView layoutX="48.0" layoutY="43.0" prefHeight="200.0" prefWidth="387.0">
-                                    <columns>
-                                        <TableColumn prefWidth="386.40001220703124" text="Club name" />
-                                    </columns>
-                                </TableView>
-                                <Button layoutX="487.0" layoutY="86.0" mnemonicParsing="false" text="Manage club" />
-                                <Button layoutX="488.0" layoutY="157.0" mnemonicParsing="false" text="Check events" />
+                                <Label fx:id="clubAdvisorDisplayName" layoutX="191.0" layoutY="155.0" prefHeight="26.0" prefWidth="170.0" AnchorPane.leftAnchor="220.0" />
+                                <TextField fx:id="clubAdvisorEmailDisplay" layoutX="194.0" layoutY="206.0" prefHeight="30.0" prefWidth="170.0" style="-fx-border-width: 2;" AnchorPane.leftAnchor="220.0" />
+                                <TextField fx:id="clubAdvisorContactDisplay" layoutX="194.0" layoutY="256.0" prefHeight="30.0" prefWidth="170.0" style="-fx-border-width: 2;" AnchorPane.leftAnchor="220.0" />
+                                <TextField fx:id="clubAdvisorChangePassword" layoutX="194.0" layoutY="308.0" prefHeight="30.0" prefWidth="170.0" style="-fx-border-width: 2;" AnchorPane.leftAnchor="220.0" />
+                                <Button layoutX="451.0" layoutY="222.0" mnemonicParsing="false" onAction="#onClickSaveChanges" text="Save Changes" />
+                        <Text layoutX="32.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change password" AnchorPane.leftAnchor="70.0">
+                           <font>
+                              <Font name="Lucida Fax Regular" size="14.0" />
+                           </font>
+                        </Text>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
+      <Label fx:id="clubAdvisorDisplayID" layoutX="437.0" layoutY="99.0" prefHeight="20.0" prefWidth="178.0" />
     </children>
 </AnchorPane>

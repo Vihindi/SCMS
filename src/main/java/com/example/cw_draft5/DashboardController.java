@@ -48,7 +48,11 @@ public class DashboardController implements Initializable {
 
     @FXML
     private ImageView eventAttend;
+    private ClubAdvisor clubAdvisor;
 
+    public void setClubAdvisor(ClubAdvisor clubAdvisor) {
+        this.clubAdvisor = clubAdvisor;
+    }
 
     @FXML
     private VBox slider;
@@ -151,7 +155,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void Logout(MouseEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
@@ -208,9 +212,18 @@ public class DashboardController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
-
+    @FXML
+    void Profile(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ClubAdvisorProfile.fxml"));
+            Parent root = loader.load();
+            ClubAdvisorProfileController profileController = loader.getController();
+            profileController.setClubAdvisor(clubAdvisor);
+            bp.setCenter(root);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

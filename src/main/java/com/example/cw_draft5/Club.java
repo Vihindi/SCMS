@@ -1,11 +1,8 @@
 package com.example.cw_draft5;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.List;
 
-public class Club extends DisplayClubs {
+public class Club {
 
     private  int clubID;
     private  String clubName;
@@ -16,10 +13,10 @@ public class Club extends DisplayClubs {
     private  String clubBenefits;
 
     public Club(int clubID, String clubName, String clubDescription, String clubBenefits) {
-        Club.clubID = clubID;
-        Club.clubName = clubName;
-        Club.clubDescription = clubDescription;
-        Club.clubBenefits = clubBenefits;
+        this.clubID = clubID;
+        this.clubName = clubName;
+        this.clubDescription = clubDescription;
+        this.clubBenefits = clubBenefits;
     }
 
     public Club(int clubID, String clubName, String clubDescription, String clubMission, LocalDate startDate, Integer clubAdvisorID, String clubBenefits) {

@@ -90,7 +90,7 @@ public class SelectClubController extends StudentRegisterController implements I
         }
     }
 
-
+    @FXML
     public void onClickJoinClub(ActionEvent event) {
         try {
             DisplayClubs selectedItem = clubSelectionTable.getSelectionModel().getSelectedItem();

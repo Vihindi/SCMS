@@ -39,9 +39,6 @@ public class LoginController extends DatabaseConnection {
     ResultSet rs;
 
 
-
-
-
     @FXML
     public void onClickCreateAccount(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainRegisterPage.fxml")));
@@ -50,8 +47,6 @@ public class LoginController extends DatabaseConnection {
         stage.setScene(scene);
         stage.show();
     }
-
-
 
     public void onClickLogin(ActionEvent event) throws IOException {
          String username = usernameField.getText();
@@ -62,22 +57,34 @@ public class LoginController extends DatabaseConnection {
 
         } else {
             try {
-                pst = DatabaseConnection.getConnection().prepareStatement("SELECT * FROM student WHERE Email=? and Password=?");
+                pst = DatabaseConnection.getConnection().prepareStatement("SELECT FullName,Email,ContactNo,Password FROM student WHERE Email=? AND Password=?" +
+                        " UNION ALL " +
+                        "SELECT FullName,Email,ContactNo,Password FROM clubadvisor WHERE Email=? AND Password=?");
                 pst.setString(1, username);
                 pst.setString(2, password);
+                pst.setString(3,username);
+                pst.setString(4, password);
+
                 rs = pst.executeQuery();
 
                 if (rs.next()) {
-                    EventAttendanceController.username1 = username;
-                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Dashboard.fxml")));
+                    ClubAdvisor clubAdvisor = new ClubAdvisor();
+                    clubAdvisor.setClubAdvisorName(rs.getString("FullName"));
+                    clubAdvisor.setEmail(rs.getString("Email"));
+                    clubAdvisor.setContactNo(rs.getString("ContactNo"));
+                    clubAdvisor.setPassword(rs.getString("Password"));
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+                    Parent root = loader.load();
+                    DashboardController dashboardController = loader.getController();
+                    dashboardController.setClubAdvisor(clubAdvisor);
+
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
                 } else {
                     loginResult.setText("Entered incorrect email or password");
-                    usernameField.setText("");
-                    passwordField.setText("");
                 }
 
             } catch (SQLException e) {
@@ -87,5 +94,22 @@ public class LoginController extends DatabaseConnection {
 
         }
     }
+//    private void loadStudentAdditionalInfo(ClubAdvisor clubAdvisor) {
+//        try {
+//            PreparedStatement infoPst = DatabaseConnection.getConnection().prepareStatement(
+//                    "SELECT FullName FROM club WHERE Email=?");
+//            infoPst.setString(1, clubAdvisor.getEmail()); // Assuming getEmail method in Student class
+//
+//            ResultSet infoRs = infoPst.executeQuery();
+//
+//            if (infoRs.next()) {
+//                // Set additional fields in the Student object
+//                clubAdvisor.setClubAdvisorName(infoRs.getString("FullName"));
+//                // Add other fields as needed
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
 }
