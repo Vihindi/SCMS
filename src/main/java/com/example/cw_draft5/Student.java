@@ -30,11 +30,13 @@ public class Student {
         this.skills = skills;
         this.password = password;
     }
-    public Student(String studentID, String fullName) {
+    public Student(){
+
+    }
+    public Student(String studentID,String fullName){
         this.studentID = studentID;
         this.fullName = fullName;
     }
-
 
     public String getStudentID() {
         return studentID;
@@ -90,5 +92,53 @@ public class Student {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public void setGuardianName(String guardianName) {
+        this.guardianName = guardianName;
+    }
+
+    public void setGuardianContactNo(String guardianContactNo) {
+        this.guardianContactNo = guardianContactNo;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

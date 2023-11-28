@@ -15,12 +15,12 @@
                 <Font size="33.0" />
             </font>
         </Text>
-      <TableView fx:id="clubSelectionTable" layoutX="40.0" layoutY="163.0" prefHeight="330.0" prefWidth="922.0" styleClass="text" stylesheets="@CSS/ClubCreation.css">
+      <TableView fx:id="clubSelectionTable" layoutX="68.0" layoutY="163.0" prefHeight="330.0" prefWidth="870.0" styleClass="text" stylesheets="@CSS/ClubCreation.css">
         <columns>
             <TableColumn fx:id="clubIDColumn" prefWidth="88.800048828125" text="Club ID" />
-          <TableColumn fx:id="clubNameColumn" prefWidth="227.99996948242188" text="Club name" />
-          <TableColumn fx:id="clubDescriptColumn" prefWidth="401.60003662109375" text="Description" />
-            <TableColumn fx:id="clubBenefitColumn" prefWidth="202.39999999999998" text="Benefits" />
+          <TableColumn fx:id="clubNameColumn" prefWidth="213.06674194335938" text="Club name" />
+          <TableColumn fx:id="clubDescriptColumn" prefWidth="322.93328857421875" text="Description" />
+            <TableColumn fx:id="clubBenefitColumn" prefWidth="245.86663818359375" text="Benefits" />
         </columns>
       </TableView>
       <Button layoutX="452.0" layoutY="519.0" mnemonicParsing="false" onAction="#onClickJoinClub" prefHeight="31.0" prefWidth="95.0" styleClass="text" stylesheets="@CSS/ClubCreation.css" text="Join Club" />

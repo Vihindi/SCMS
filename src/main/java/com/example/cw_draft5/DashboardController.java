@@ -48,7 +48,11 @@ public class DashboardController implements Initializable {
 
     @FXML
     private ImageView eventAttend;
+    private ClubAdvisor clubAdvisor;
 
+    public void setClubAdvisor(ClubAdvisor clubAdvisor) {
+        this.clubAdvisor = clubAdvisor;
+    }
 
     @FXML
     private VBox slider;
@@ -128,6 +132,8 @@ public class DashboardController implements Initializable {
 
 
 
+
+
     @FXML
     void AttendanceAdmin(MouseEvent event) {
         try {
@@ -149,7 +155,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void Logout(MouseEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
@@ -196,12 +202,6 @@ public class DashboardController implements Initializable {
 
     @FXML
     void ReportClick(MouseEvent event) {
-        try {
-            loadPage("EventRegistration");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
 
     }
 
@@ -212,40 +212,16 @@ public class DashboardController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
-
-
-    public void StudentReport(MouseEvent mouseEvent) {
+    @FXML
+    void Profile(MouseEvent event) {
         try {
-            loadPage("StudentReport");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void ClubAdminReport(MouseEvent mouseEvent) {
-        try {
-            loadPage("ClubAdvisorReport");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    public void ClubActivityReport(MouseEvent mouseEvent) {
-        try {
-            loadPage("ClubActivityReport");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void AttendanceReportClick(MouseEvent mouseEvent) {
-        try {
-            loadPage("AttendenceReport");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ClubAdvisorProfile.fxml"));
+            Parent root = loader.load();
+            ClubAdvisorProfileController profileController = loader.getController();
+            profileController.setClubAdvisor(clubAdvisor);
+            bp.setCenter(root);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

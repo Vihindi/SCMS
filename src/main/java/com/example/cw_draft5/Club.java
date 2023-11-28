@@ -1,11 +1,8 @@
 package com.example.cw_draft5;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.List;
 
-public class Club extends DisplayClubs {
+public class Club {
 
     private  int clubID;
     private  String clubName;
