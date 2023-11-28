@@ -1,15 +1,19 @@
 .root {
-    -fx-background-image: url('../Asserts/Background.jpg');
+    -fx-background-image: url('../Asserts/HomeBackground.jpg');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+
+}
+#textId2 {
+    -fx-font-family: 'Comic Sans MS';
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-effect: dropshadow(three-pass-box, #3498db, 10, 0, 0, 0);
+    -fx-transition: color 0.3s ease;
 }
 
-.text {
-    -fx-font-family: "Arial";
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-fill: #333}
-
-#slider{
-    -fx-background-color: linear-gradient(to bottom, #0379b7, rgba(0, 0, 0, 0)), rgba(255, 255, 255, 0.5);
+#textId2:hover {
+    -fx-text-fill: #e74c3c;
 }

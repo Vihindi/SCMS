@@ -32,7 +32,7 @@
             <TableColumn fx:id="DescriptionColumn" prefWidth="139.99993896484375" text="Description" />
          </columns>
       </TableView>
-      <ImageView fx:id="SearchBtn" fitHeight="40.0" fitWidth="39.0" layoutX="467.0" layoutY="27.0" onMouseClicked="#SearchBtn" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="SearchBtn" fitHeight="44.0" fitWidth="34.0" layoutX="467.0" layoutY="27.0" onMouseClicked="#SearchBtn" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Asserts/Search.png" />
          </image>

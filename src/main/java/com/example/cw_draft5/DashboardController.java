@@ -196,12 +196,6 @@ public class DashboardController implements Initializable {
 
     @FXML
     void ReportClick(MouseEvent event) {
-        try {
-            loadPage("Reporting");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
     }
 
     @FXML
@@ -232,17 +226,18 @@ public class DashboardController implements Initializable {
         }
     }
 
-    public void AttendenceReport(MouseEvent mouseEvent) {
+
+    public void ClubActivityReport(MouseEvent mouseEvent) {
         try {
-            loadPage("AttendenceReport");
+            loadPage("ClubActivityReport");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void ClubActivityReport(MouseEvent mouseEvent) {
+    public void AttendanceReportClick(MouseEvent mouseEvent) {
         try {
-            loadPage("ClubActivityReport");
+            loadPage("AttendenceReport");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

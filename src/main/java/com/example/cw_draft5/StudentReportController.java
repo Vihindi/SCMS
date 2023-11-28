@@ -58,15 +58,15 @@ public class StudentReportController {
     @FXML
     private TableView<Student> StudentTable;
 
-    private DatabaseConnection databaseConnection;
+    private UserRegistrationQueries userRegistrationQueries;
 
     @FXML
     public void initialize() {
         // Initialize the database connection
-        databaseConnection = new DatabaseConnection();
+        userRegistrationQueries = new UserRegistrationQueries();
 
         // Populate the ClubDropDown with club names
-        List<String> clubNames = databaseConnection.getClubNameForReport();
+        List<String> clubNames = userRegistrationQueries.getClubNameForReport();
         ClubDropDown.setItems(FXCollections.observableArrayList(clubNames));
 
         // Initialize the table columns
@@ -91,7 +91,7 @@ public class StudentReportController {
         String selectedClub = ClubDropDown.getValue();
 
         // Retrieve students for the selected club from the database
-        List<Student> students = databaseConnection.getStudentsByClub(selectedClub);
+        List<Student> students = userRegistrationQueries.getStudentsByClub(selectedClub);
 
         // Update the TableView with the retrieved student data
         StudentTable.setItems(FXCollections.observableArrayList(students));
