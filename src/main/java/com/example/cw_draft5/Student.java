@@ -1,5 +1,10 @@
 package com.example.cw_draft5;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+
 public class Student {
     private String studentID;
     private String fullName;
@@ -8,6 +13,7 @@ public class Student {
         this.studentID = studentID;
         this.fullName = fullName;
     }
+
 
     public String getStudentID() {
         return studentID;
@@ -24,4 +30,6 @@ public class Student {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+
 }
