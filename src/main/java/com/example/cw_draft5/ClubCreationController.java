@@ -11,65 +11,6 @@ import java.sql.*;
 
 public class ClubCreationController {
 
-    @FXML
-    private Button CustomBtn;
 
-    @FXML
-    private TextField clubID;
-
-    @FXML
-    private TextField clubAdvisorID;
-
-    @FXML
-    private TextField clubBenefits;
-
-    @FXML
-    private TextField clubDescription;
-
-    @FXML
-    private TextField clubMission;
-
-    @FXML
-    private TextField clubName;
-
-    @FXML
-    private DatePicker startDate;
-
-    @FXML
-    void CreateClub(MouseEvent event) throws ClassNotFoundException {
-        Club newClub = new Club(
-                Integer.parseInt(clubID.getText()),
-                clubName.getText(),
-                clubDescription.getText(),
-                clubMission.getText(),
-                startDate.getValue(),
-                Integer.parseInt(clubAdvisorID.getText()),
-                clubBenefits.getText()
-        );
-
-        ClubCreationDatabase.AddClubToDB(newClub);
-
-        // Show a success message to the user
-        showSuccessAlert();
-        clearTextFields();
-    }
-
-    private void clearTextFields() {
-        clubID.clear();
-        clubName.clear();
-        clubDescription.clear();
-        clubMission.clear();
-        startDate.setValue(null);
-        clubAdvisorID.clear();
-        clubBenefits.clear();
-    }
-
-    private void showSuccessAlert() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setHeaderText(null);
-        alert.setContentText("Club created successfully!");
-        alert.showAndWait();
-    }
 
 }
