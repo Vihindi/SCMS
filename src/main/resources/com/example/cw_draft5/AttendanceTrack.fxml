@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ap" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="789.0" styleClass="root" stylesheets="@CSS/AttendanceTrack.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cw_draft5.AttendanceTrackController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <TableView fx:id="AttendanceTable" layoutX="103.0" layoutY="116.0" prefHeight="374.0" prefWidth="562.0">
+        <columns>
+          <TableColumn fx:id="studentIDColumn" prefWidth="185.99996948242188" text="Student ID" />
+          <TableColumn fx:id="NameColumn" prefWidth="373.3333740234375" text="Name" />
+        </columns>
+      </TableView>
+      <Text fx:id="textId" layoutX="254.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance List" wrappingWidth="308.13665771484375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <HBox layoutX="50.0" layoutY="66.0" prefHeight="30.0" prefWidth="274.0">
+         <children>
+            <ComboBox fx:id="clubComboBox" onAction="#ClickClubSearch" prefHeight="25.0" prefWidth="275.0" promptText="Select Club">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Club A" />
+                     <String fx:value="Club B" />
+                     <String fx:value="Club C" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+         </children>
+      </HBox>
+      <HBox layoutX="442.0" layoutY="66.0" prefHeight="30.0" prefWidth="274.0">
+         <children>
+            <ComboBox fx:id="eventComboBox" onAction="#ClickEventSearch" prefHeight="25.0" prefWidth="283.0" promptText="Select Event">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Event 1" />
+                     <String fx:value="Event 2" />
+                     <String fx:value="Event 3" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+         </children>
+      </HBox>
+      <Label fx:id="sumOfAttendance" layoutX="81.0" layoutY="425.0" prefHeight="17.0" prefWidth="24.0" visible="false">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
